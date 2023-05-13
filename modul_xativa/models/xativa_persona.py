@@ -16,7 +16,7 @@ class XativaPersona(models.Model):
     correoElectronico = fields.Char('Correo Electrónico', required=True)
     tipoIdentificacion = fields.Char('Tipo de Identificación', required=True)
     identificacion = fields.Char('Identificación', required=True)
-    validezIdentificacion = fields.Char('Validez Identificación', required=True)
+    validezIdentificacion = fields.Date('Validez Identificación', required=True)
     identificacionTutor = fields.Char('Identificación del Tutor', required=False)
     nombreTutor = fields.Char('Nombre del tutor', required=False)
     documentoAutorizacionTutor = fields.Binary('Documento Autorizacion Tutor', required=False)

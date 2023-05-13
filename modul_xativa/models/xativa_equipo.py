@@ -8,8 +8,8 @@ class XativaEquipo(models.Model):
     categoria = fields.Char('Categoría', required=False)
     foto = fields.Image('Foto', required=False)
     temporada_id = fields.Many2one('xativa.temporada', string='Temporada')
-    jugadores_ids = fields.Many2many('xativa.persona', 'jugadores_rel', 'equipo_id', 'persona_id', string='Jugadores')
-    entrenadores_ids = fields.Many2many('xativa.persona', 'entrenadores_rel', 'equipo_id', 'persona_id', string='Entrenadores')
+    jugadores_ids = fields.Many2many('xativa.persona', 'equipo_jugador_rel', 'equipo_id', 'persona_id', string='Jugadores')
+    entrenadores_ids = fields.Many2many('xativa.persona', 'equipo_entrenador_rel', 'equipo_id', 'persona_id', string='Entrenadores')
 
     def _get_name(self):
         for record in self:
