@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_xativa_equipo,access_xativa_equipo,model_xativa_equipo,,1,1,1,1
+access_xativa_persona,access_xativa_persona,model_xativa_persona,,1,1,1,1
+access_xativa_temporada,access_xativa_temporada,model_xativa_temporada,,1,1,1,1

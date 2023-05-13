@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record model="ir.actions.act_window" id="action_xativa_equipo">
+			<field name="name">Equipo</field>
+			<field name="res_model">xativa.equipo</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_xativa_persona">
+			<field name="name">Persona</field>
+			<field name="res_model">xativa.persona</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="action_xativa_temporada">
+			<field name="name">Temporada</field>
+			<field name="res_model">xativa.temporada</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+	
+		<menuitem name="Xàtiva" id="xativa_menu_1" />
+		<menuitem name="Equipo" parent="xativa_menu_1" id="xativa_menu_2_equipo" action="action_xativa_equipo" />
+		<menuitem name="Persona" parent="xativa_menu_1" id="xativa_menu_2_persona" action="action_xativa_persona" />
+		<menuitem name="Temporada" parent="xativa_menu_1" id="xativa_menu_2_temporada" action="action_xativa_temporada" />
+
+		<record model="ir.ui.view" id="view_xativa_equipo_tree">
+			<field name="name">view_xativa_equipo_tree</field>
+			<field name="model">xativa.equipo</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="equipo">
+					<field name="nombreComercial"/>
+					<field name="superficie"/>
+					<field name="categoria"/>
+					<field name="temporada_id"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="view_xativa_temporada_tree">
+			<field name="name">view_xativa_temporada_tree</field>
+			<field name="model">xativa.temporada</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="temporada">
+					<field name="temporada"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="view_xativa_persona_tree">
+			<field name="name">view_xativa_persona_tree</field>
+			<field name="model">xativa.persona</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="persona">
+					<field name="nombre"/>
+					<field name="apellidos"/>
+					<field name="esJugador"/>
+					<field name="esOficial"/>
+				</tree>
+			</field>
+		</record>
+		
+	</data>
+</odoo>
