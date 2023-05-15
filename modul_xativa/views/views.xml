@@ -12,17 +12,24 @@
 			<field name="res_model">xativa.persona</field>
 			<field name="view_mode">tree,form</field>
 		</record>
-		
+
 		<record model="ir.actions.act_window" id="action_xativa_temporada">
 			<field name="name">Temporada</field>
 			<field name="res_model">xativa.temporada</field>
 			<field name="view_mode">tree,form</field>
+		</record>		
+		
+		<record model="ir.actions.act_window" id="action_xativa_directiva">
+			<field name="name">Directiva</field>
+			<field name="res_model">xativa.directiva</field>
+			<field name="view_mode">tree,form</field>
 		</record>
-	
+
 		<menuitem name="Xàtiva" id="xativa_menu_1" />
 		<menuitem name="Equipo" parent="xativa_menu_1" id="xativa_menu_2_equipo" action="action_xativa_equipo" />
 		<menuitem name="Persona" parent="xativa_menu_1" id="xativa_menu_2_persona" action="action_xativa_persona" />
 		<menuitem name="Temporada" parent="xativa_menu_1" id="xativa_menu_2_temporada" action="action_xativa_temporada" />
+		<menuitem name="Directiva" parent="xativa_menu_1" id="xativa_menu_2_directiva" action="action_xativa_directiva" />
 
 		<record model="ir.ui.view" id="view_xativa_equipo_tree">
 			<field name="name">view_xativa_equipo_tree</field>
@@ -30,38 +37,160 @@
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="equipo">
-					<field name="nombreComercial"/>
-					<field name="superficie"/>
-					<field name="categoria"/>
-					<field name="temporada_id"/>
+					<field name="nombreComercial" />
+					<field name="superficie" />
+					<field name="categoria" />
+					<field name="temporada_id" />
 				</tree>
 			</field>
 		</record>
-		
+
 		<record model="ir.ui.view" id="view_xativa_temporada_tree">
 			<field name="name">view_xativa_temporada_tree</field>
 			<field name="model">xativa.temporada</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="temporada">
-					<field name="temporada"/>
+					<field name="temporada" />
 				</tree>
 			</field>
 		</record>
-		
+
 		<record model="ir.ui.view" id="view_xativa_persona_tree">
 			<field name="name">view_xativa_persona_tree</field>
 			<field name="model">xativa.persona</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="persona">
-					<field name="nombre"/>
-					<field name="apellidos"/>
-					<field name="esJugador"/>
-					<field name="esOficial"/>
+					<field name="nombre" />
+					<field name="apellidos" />
+					<field name="fechaNacimiento" />
+					<field name="categoria" />
 				</tree>
 			</field>
 		</record>
-		
+
+		<record model="ir.ui.view" id="view_xativa_directiva_tree">
+			<field name="name">view_xativa_directiva_tree</field>
+			<field name="model">xativa.directiva</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="directiva">
+					<field name="cargo" />
+					<field name="personas" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_xativa_persona_form">
+			<field name="name">view_xativa_persona_form</field>
+			<field name="model">xativa.persona</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Persona">
+					<sheet>
+						<group col="12">
+							<group colspan="4">
+								<field name="foto" widget="image" />
+							</group>
+							<group colspan="4">
+								<field name="nombre" />
+								<field name="apellidos" />
+								<field name="tipoIdentificacion" />
+								<field name="identificacion" />
+								<field name="correoElectronico" />
+								<field name="telefono" />
+								<field name="sexo" />
+							</group>
+							<group colspan="4">
+								<field name="fechaNacimiento" />
+								<field name="categoria" />
+								<field name="paisNacimiento" />
+								<field name="direccionResidencia" />
+								<field name="codigoPostal" />
+								<field name="localidad" />
+								<field name="provincia" />
+								<field name="paisResidencia" />
+							</group>
+						</group>
+						<group col="12">
+							<group colspan="4">
+							</group>	
+							<group colspan="4">
+								<field name="identificacionAnverso" widget="image" />
+							</group>
+							<group colspan="4">
+								<field name="identificacionReverso" widget="image" />
+							</group>
+						</group>
+						<group col="12">
+							<group colspan="4">
+							</group>	
+							<group colspan="8">
+							<field name="validezIdentificacion" />
+							</group>
+						</group>
+						<group col="12">
+							<group colspan="4">
+							</group>	
+							<group colspan="4">
+								<field name="afiliadoFederacion" />
+								<field name="validadoFederacion" />
+								<field name="seguroObligatorio" />
+								<field name="seguroSolicitado" />
+							</group>
+							<group colspan="4">
+								<field name="seguroPagado" />
+								<field name="jugadorReconocimientoMedico" />
+								<field name="jugadorAutorizacionCategoriaSuperior" />
+							</group>
+						</group>
+						<group col="12">
+							<group colspan="4">
+							</group>	
+							<group colspan="4">
+								<field name="identificacionTutor" />
+								<field name="telefonoTutor" />
+								<field name="documentoAutorizacionTutor" />
+							</group>
+							<group colspan="4">
+								<field name="nombreTutor" />
+								<field name="mailTutor" />
+								<field name="documentoIdentificacionTutor" />
+							</group>
+						</group>
+						<group col="12">
+							<group colspan="4">
+							</group>	
+							<group colspan="4">
+								<field name="entrenadorTituloMonitorNivel1" />
+								<field name="entrenadorTituloMonitorNivel2" />
+							</group>
+							<group colspan="4">
+								<field name="entrenadorTituloMonitorNivel3" />
+								<field name="entrenadorCertificadoDelitosSexuales" />
+							</group>
+						</group>
+
+
+						
+						<notebook colspan="10">
+							<page string="Equipos como jugador">
+								<field name="equipo_jugador_ids" />
+							</page>
+							<page string="Equipos como oficial">
+								<field name="equipo_entrenador_ids" />
+							</page>
+							<page string="Equipos como invitado">
+								<field name="equipo_invitados_ids" />
+							</page>
+							<page string="Equipos como staff adicional">
+								<field name="equipo_staff_adicional_ids" />
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
 	</data>
 </odoo>

@@ -2,43 +2,67 @@ from odoo import models, fields
 class XativaPersona(models.Model): 
     _name = 'xativa.persona'
     name = fields.Char(compute='_get_name',string='Nombre persona',readonly='true',store=False)
+    
     nombre = fields.Char('Nombre', required=True)
     apellidos = fields.Char('Apellidos', required=True)
+    tipoIdentificacion = fields.Char('Tipo Identificación', required=True)
+    identificacion = fields.Char('Identificación', required=True)
+    correoElectronico = fields.Char('Correo Electrónico', required=True)
     telefono = fields.Integer('Telefono', required=True)
     sexo = fields.Char('Sexo', required=True)
+    foto = fields.Image('Foto', required=True)
+
+    categoria = fields.Char('Categoria', required=True)
+    fechaNacimiento = fields.Date('Fecha Nacimiento', required=True)
     paisNacimiento = fields.Char('País de Nacimiento', required=True)
-    paisResidencia = fields.Char('País de Residencia', required=True)
-    direccionResidencia = fields.Char('Dirección de Residencia', required=True)
+    direccionResidencia = fields.Char('Dirección', required=True)
     codigoPostal = fields.Integer('Codigo Postal', required=True)
     localidad = fields.Char('Localidad', required=True)
     provincia = fields.Char('Provincia', required=True)
-    fechaNacimiento = fields.Date('Fecha de Nacimiento', required=True)
-    correoElectronico = fields.Char('Correo Electrónico', required=True)
-    tipoIdentificacion = fields.Char('Tipo de Identificación', required=True)
-    identificacion = fields.Char('Identificación', required=True)
-    validezIdentificacion = fields.Char('Validez Identificación', required=True)
+    paisResidencia = fields.Char('País', required=True)
+    
+    identificacionAnverso = fields.Image('Identificacion Anverso', required=True)
+    identificacionReverso = fields.Image('Identificacion Reverso', required=True)
+    validezIdentificacion = fields.Date('Validez Identificación', required=True)
+
+    afiliadoFederacion = fields.Char('Afiliado En Fede.', required=True)
+    validadoFederacion = fields.Boolean('Validado Federacion', required=True)
+    seguroObligatorio = fields.Boolean('Seguro Obligatorio', required=True)
+    seguroSolicitado = fields.Boolean('Seguro Solicitado', required=False)
+    seguroPagado = fields.Boolean('Seguro Pagado', required=False)
+    jugadorReconocimientoMedico = fields.Binary('Reconoc. Medico', required=False)
+    jugadorAutorizacionCategoriaSuperior = fields.Binary('Aut. Cat. Superior', required=False)
+
     identificacionTutor = fields.Char('Identificación del Tutor', required=False)
     nombreTutor = fields.Char('Nombre del tutor', required=False)
     documentoAutorizacionTutor = fields.Binary('Documento Autorizacion Tutor', required=False)
     documentoIdentificacionTutor = fields.Binary('Documento Identificacion Tutor', required=False)
-    identificacionAnverso = fields.Image('Identificacion Anverso', required=True)
-    identificacionReverso = fields.Image('Identificacion Reverso', required=True)
-    foto = fields.Image('Foto', required=True)
-    esJugador = fields.Boolean('Jugador', required=True)
-    esOficial = fields.Boolean('Oficial', required=True)
-    afiliadoFederacion = fields.Char('Afiliado En Federacion', required=True)
-    seguroObligatorio = fields.Boolean('Seguro Obligatorio', required=True)
-    seguroSolicitado = fields.Boolean('Provincia', required=False)
-    jugadorReconocimientoMedico = fields.Binary('Reconocimiento Medico', required=False)
-    jugadorAutorizacionCategoriaSuperior = fields.Binary('Autorizacion Categoria Superior', required=False)
-    validadoFederacion = fields.Boolean('Validado Federacion', required=True)
+    telefonoTutor = fields.Integer('Teléfono tutor', required=False)
+    mailTutor = fields.Char('Mail tutor', required=False)
+    
     entrenadorTituloMonitorNivel1 = fields.Binary('Titulo Monitor Nivel 1', required=False)
     entrenadorTituloMonitorNivel2 = fields.Binary('Titulo Monitor Nivel 2', required=False)
     entrenadorTituloMonitorNivel3 = fields.Binary('Titulo Monitor Nivel 3', required=False)
     entrenadorCertificadoDelitosSexuales = fields.Binary('Certificado Delitos Sexuales', required=False)
+    
     equipo_jugador_ids = fields.Many2many('xativa.equipo', 'equipo_jugador_rel', 'persona_id', 'equipo_id', string='Equipos como jugador')
-    equipo_entrenador_ids = fields.Many2many('xativa.equipo', 'equipo_entrenador_rel', 'persona_id', 'equipo_id', string='Equipos como entrenador')
+    equipo_invitados_ids = fields.Many2many('xativa.equipo', 'equipo_invitado_rel', 'persona_id', 'equipo_id', string='Equipos como invitado')
+    equipo_entrenador_ids = fields.Many2many('xativa.equipo', 'equipo_entrenador_rel', 'persona_id', 'equipo_id', string='Equipos como oficial')
+    equipo_staff_adicional_ids = fields.Many2many('xativa.equipo', 'equipo_staff_adicional_rel', 'persona_id', 'equipo_id', string='Equipos como staff adicional')
+    directiva_id = fields.Many2one('xativa.directiva', string='Cargo directivo', select=True)
+   
+
 
     def _get_name(self):
         for record in self:
             record.name = str(record.nombre + ' ' + record.apellidos)
+    
+    def _check_jugador(self):
+        for record in self:
+            if(len(record.equipo_jugador_ids)>0):
+                record.esJugador = True
+    
+    def _check_oficial(self):
+        for record in self:
+            if(len(record.equipo_entrenador_ids)>0):
+                record.esJugador = True
