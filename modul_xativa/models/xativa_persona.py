@@ -45,9 +45,16 @@ class XativaPersona(models.Model):
     entrenadorTituloMonitorNivel3 = fields.Binary('Titulo Monitor Nivel 3', required=False)
     entrenadorCertificadoDelitosSexuales = fields.Binary('Certificado Delitos Sexuales', required=False)
     
+    dorsal = fields.Integer('Dorsal', required=False)
+    tallaCamiseta = fields.Char('Talla Camiseta', required=True)
+    tallaSudadera = fields.Char('Talla Pantaloneta', required=True)
+    tallaPolo = fields.Char('Talla Pantaloneta', required=True)
+    tallaChaquetaChandal = fields.Char('Talla Pantaloneta', required=True)
+    tallaPantalonChandal = fields.Char('Talla Pantaloneta', required=True) 
+
     equipo_jugador_ids = fields.Many2many('xativa.equipo', 'equipo_jugador_rel', 'persona_id', 'equipo_id', string='Equipos como jugador')
     equipo_invitados_ids = fields.Many2many('xativa.equipo', 'equipo_invitado_rel', 'persona_id', 'equipo_id', string='Equipos como invitado')
-    equipo_entrenador_ids = fields.Many2many('xativa.equipo', 'equipo_entrenador_rel', 'persona_id', 'equipo_id', string='Equipos como oficial')
+    equipo_entrenador_ids = fields.Many2many('xativa.equipo', 'equipo_oficial_rel', 'persona_id', 'equipo_id', string='Equipos como oficial')
     equipo_staff_adicional_ids = fields.Many2many('xativa.equipo', 'equipo_staff_adicional_rel', 'persona_id', 'equipo_id', string='Equipos como staff adicional')
     directiva_id = fields.Many2one('xativa.directiva', string='Cargo directivo', select=True)
    
