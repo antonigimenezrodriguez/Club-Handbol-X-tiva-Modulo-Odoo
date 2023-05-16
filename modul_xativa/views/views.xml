@@ -35,6 +35,12 @@
 			<field name="name">Pagament</field>
 			<field name="res_model">xativa.pagament</field>
 			<field name="view_mode">tree,form</field>
+		</record>		
+		
+		<record model="ir.actions.act_window" id="action_xativa_cobraments">
+			<field name="name">Cobrament</field>
+			<field name="res_model">xativa.cobrament</field>
+			<field name="view_mode">tree,form</field>
 		</record>
 
 		<menuitem name="Xàtiva" id="xativa_menu_1" />
@@ -44,6 +50,7 @@
 		<menuitem name="Directiva" parent="xativa_menu_1" id="xativa_menu_2_directiva" action="action_xativa_directiva" />
 		<menuitem name="Esponsors" parent="xativa_menu_1" id="xativa_menu_2_esponsor" action="action_xativa_esponsor" />
 		<menuitem name="Pagaments" parent="xativa_menu_1" id="xativa_menu_2_pagaments" action="action_xativa_pagaments" />
+		<menuitem name="Cobraments" parent="xativa_menu_1" id="xativa_menu_2_cobraments" action="action_xativa_cobraments" />
 
 		<record model="ir.ui.view" id="view_xativa_equip_tree">
 			<field name="name">view_xativa_equip_tree</field>
@@ -77,9 +84,9 @@
 			<field name="arch" type="xml">
 				<tree string="esponsor">
 					<field name="nomEsponsor" />
+					<field name="cif" />
 					<field name="importSenseIVA" />
 					<field name="importAmbIVA" />
-					<field name="dadesFiscals" />
 					<field name="equips_ids" />
 				</tree>
 			</field>
@@ -121,6 +128,20 @@
 					<field name="concepte" />
 					<field name="importe" />
 					<field name="dataPagament" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_xativa_cobraments_tree">
+			<field name="name">view_xativa_cobraments_tree</field>
+			<field name="model">xativa.cobrament</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="cobrament">
+					<field name="persona_id" />
+					<field name="concepte" />
+					<field name="importe" />
+					<field name="dataCobrament" />
 				</tree>
 			</field>
 		</record>
@@ -221,6 +242,7 @@
 							</group>
 							<group colspan="4">
 								<field name="entrenadorTitolMonitorNivell3" />
+								<field name="directiva_id" />
 							</group>
 						</group>
 
@@ -241,6 +263,9 @@
 							</page> -->
 							<page string="Pagaments">
 								<field name="pagaments_ids" />
+							</page>
+							<page string="Cobraments">
+								<field name="cobraments_ids" />
 							</page>
 						</notebook>
 					</sheet>

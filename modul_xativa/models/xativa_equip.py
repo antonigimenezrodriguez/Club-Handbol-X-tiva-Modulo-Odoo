@@ -2,7 +2,7 @@ from odoo import models, fields
 
 class XativaEquip(models.Model): 
     _name = 'xativa.equip'
-    name = fields.Char(compute='_get_name',string='Nom equipo',readonly='true',store=False)
+    name = fields.Char(compute='_get_name',string='Nom equip',readonly='true',store=False)
     nomComercial = fields.Char('Nom Comercial', required=True)
     superficie = fields.Char('Superfície', required=True)
     categoria = fields.Char('Categoria', required=True)

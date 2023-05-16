@@ -53,25 +53,16 @@ class XativaPersona(models.Model):
     tallaPantaloXandall = fields.Char('Pantaló Xandall', required=False) 
 
     equip_jugador_ids = fields.Many2many('xativa.equip', 'equip_jugador_rel', 'persona_id', 'equip_id', string='Equips com jugador')
-    equip_convidats_ids = fields.Many2many('xativa.equip', 'equipo_convidat_rel', 'persona_id', 'equip_id', string='Equips com convidat')
+    equip_convidats_ids = fields.Many2many('xativa.equip', 'equip_convidat_rel', 'persona_id', 'equip_id', string='Equips com convidat')
     equip_entrenador_ids = fields.Many2many('xativa.equip', 'equip_oficial_rel', 'persona_id', 'equip_id', string='Equips com oficial')
     equip_staff_addicional_ids = fields.Many2many('xativa.equip', 'equip_staff_addicional_rel', 'persona_id', 'equip_id', string='Equips como staff addicional')
     directiva_id = fields.Many2one('xativa.directiva', string='Càrrec directiu')
     pagaments_ids = fields.One2many('xativa.pagament', 'persona_id', string='Pagaments')
+    cobraments_ids = fields.One2many('xativa.cobrament', 'persona_id', string='Cobraments')
 
    
 
 
     def _get_name(self):
         for record in self:
-            record.name = str(record.nombre + ' ' + record.apellidos)
-    
-    def _check_jugador(self):
-        for record in self:
-            if(len(record.equipo_jugador_ids)>0):
-                record.esJugador = True
-    
-    def _check_oficial(self):
-        for record in self:
-            if(len(record.equipo_entrenador_ids)>0):
-                record.esJugador = True
+            record.name = str(record.nom + ' ' + record.cognoms)
