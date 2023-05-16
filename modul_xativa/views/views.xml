@@ -31,12 +31,19 @@
 			<field name="view_mode">tree,form</field>
 		</record>
 
+		<record model="ir.actions.act_window" id="action_xativa_pagos">
+			<field name="name">Pago</field>
+			<field name="res_model">xativa.pago</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
 		<menuitem name="Xàtiva" id="xativa_menu_1" />
 		<menuitem name="Equipo" parent="xativa_menu_1" id="xativa_menu_2_equipo" action="action_xativa_equipo" />
 		<menuitem name="Persona" parent="xativa_menu_1" id="xativa_menu_2_persona" action="action_xativa_persona" />
 		<menuitem name="Temporada" parent="xativa_menu_1" id="xativa_menu_2_temporada" action="action_xativa_temporada" />
 		<menuitem name="Directiva" parent="xativa_menu_1" id="xativa_menu_2_directiva" action="action_xativa_directiva" />
 		<menuitem name="Esponsors" parent="xativa_menu_1" id="xativa_menu_2_esponsor" action="action_xativa_esponsor" />
+		<menuitem name="Pagos" parent="xativa_menu_1" id="xativa_menu_2_pagos" action="action_xativa_pagos" />
 
 		<record model="ir.ui.view" id="view_xativa_equipo_tree">
 			<field name="name">view_xativa_equipo_tree</field>
@@ -104,6 +111,20 @@
 			</field>
 		</record>
 
+		<record model="ir.ui.view" id="view_xativa_pagos_tree">
+			<field name="name">view_xativa_pagos_tree</field>
+			<field name="model">xativa.pago</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="pago">
+					<field name="persona_id" />
+					<field name="concepto" />
+					<field name="importe" />
+					<field name="fechaPago" />
+				</tree>
+			</field>
+		</record>
+
 		<record model="ir.ui.view" id="view_xativa_persona_form">
 			<field name="name">view_xativa_persona_form</field>
 			<field name="model">xativa.persona</field>
@@ -111,7 +132,7 @@
 			<field name="arch" type="xml">
 				<form string="Persona">
 					<sheet>
-						<group col="12">
+						<group col="12" string="Dades identificatives">
 							<group colspan="4">
 								<field name="foto" widget="image" />
 							</group>
@@ -137,6 +158,7 @@
 						</group>
 						<group col="12">
 							<group colspan="4">
+								<field name="validezIdentificacion" />
 							</group>	
 							<group colspan="4">
 								<field name="identificacionAnverso" widget="image" />
@@ -145,52 +167,60 @@
 								<field name="identificacionReverso" widget="image" />
 							</group>
 						</group>
-						<group col="12">
+						<group col="12" string="Dorsals i talles">
 							<group colspan="4">
+								<field name="dorsal" />
+								<field name="tallaCamiseta" />
 							</group>	
-							<group colspan="8">
-							<field name="validezIdentificacion" />
+							<group colspan="4">
+								<field name="tallaSudadera" />
+								<field name="tallaPolo" />
+							</group>
+							<group colspan="4">
+								<field name="tallaChaquetaChandal" />
+								<field name="tallaPantalonChandal" />
 							</group>
 						</group>
-						<group col="12">
-							<group colspan="4">
-							</group>	
+						
+						<group col="12" string="Federació">
 							<group colspan="4">
 								<field name="afiliadoFederacion" />
 								<field name="validadoFederacion" />
+							</group>	
+							<group colspan="4">
 								<field name="seguroObligatorio" />
 								<field name="seguroSolicitado" />
+								<field name="seguroPagado" />
 							</group>
 							<group colspan="4">
-								<field name="seguroPagado" />
 								<field name="jugadorReconocimientoMedico" />
 								<field name="jugadorAutorizacionCategoriaSuperior" />
 							</group>
 						</group>
-						<group col="12">
+						<group col="12" string="Tutor">
 							<group colspan="4">
+								<field name="nombreTutor" />
+								<field name="identificacionTutor" />
 							</group>	
 							<group colspan="4">
-								<field name="identificacionTutor" />
-								<field name="telefonoTutor" />
+								<field name="mailTutor" />
 								<field name="documentoAutorizacionTutor" />
 							</group>
 							<group colspan="4">
-								<field name="nombreTutor" />
-								<field name="mailTutor" />
+								<field name="telefonoTutor" />
 								<field name="documentoIdentificacionTutor" />
 							</group>
 						</group>
-						<group col="12">
-							<group colspan="4">
-							</group>	
+						<group col="12" string="Oficial">
 							<group colspan="4">
 								<field name="entrenadorTituloMonitorNivel1" />
+								<field name="entrenadorCertificadoDelitosSexuales" />
+							</group>	
+							<group colspan="4">
 								<field name="entrenadorTituloMonitorNivel2" />
 							</group>
 							<group colspan="4">
 								<field name="entrenadorTituloMonitorNivel3" />
-								<field name="entrenadorCertificadoDelitosSexuales" />
 							</group>
 						</group>
 
@@ -208,6 +238,9 @@
 							</page>
 							<page string="Equipos como staff adicional">
 								<field name="equipo_staff_adicional_ids" />
+							</page>
+							<page string="Pagos">
+								<field name="pagos_ids" />
 							</page>
 						</notebook>
 					</sheet>

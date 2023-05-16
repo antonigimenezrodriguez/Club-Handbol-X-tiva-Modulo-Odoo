@@ -33,30 +33,32 @@ class XativaPersona(models.Model):
     jugadorReconocimientoMedico = fields.Binary('Reconoc. Medico', required=False)
     jugadorAutorizacionCategoriaSuperior = fields.Binary('Aut. Cat. Superior', required=False)
 
-    identificacionTutor = fields.Char('Identificación del Tutor', required=False)
-    nombreTutor = fields.Char('Nombre del tutor', required=False)
-    documentoAutorizacionTutor = fields.Binary('Documento Autorizacion Tutor', required=False)
-    documentoIdentificacionTutor = fields.Binary('Documento Identificacion Tutor', required=False)
-    telefonoTutor = fields.Integer('Teléfono tutor', required=False)
-    mailTutor = fields.Char('Mail tutor', required=False)
+    identificacionTutor = fields.Char('Identificación', required=False)
+    nombreTutor = fields.Char('Nombre', required=False)
+    documentoAutorizacionTutor = fields.Binary('Doc. Autorizacion', required=False)
+    documentoIdentificacionTutor = fields.Binary('Doc. Identificacion', required=False)
+    telefonoTutor = fields.Integer('Teléfono', required=False)
+    mailTutor = fields.Char('Mail', required=False)
     
     entrenadorTituloMonitorNivel1 = fields.Binary('Titulo Monitor Nivel 1', required=False)
     entrenadorTituloMonitorNivel2 = fields.Binary('Titulo Monitor Nivel 2', required=False)
     entrenadorTituloMonitorNivel3 = fields.Binary('Titulo Monitor Nivel 3', required=False)
-    entrenadorCertificadoDelitosSexuales = fields.Binary('Certificado Delitos Sexuales', required=False)
+    entrenadorCertificadoDelitosSexuales = fields.Binary('Cert. Delitos Sexuales', required=False)
     
     dorsal = fields.Integer('Dorsal', required=False)
-    tallaCamiseta = fields.Char('Talla Camiseta', required=True)
-    tallaSudadera = fields.Char('Talla Pantaloneta', required=True)
-    tallaPolo = fields.Char('Talla Pantaloneta', required=True)
-    tallaChaquetaChandal = fields.Char('Talla Pantaloneta', required=True)
-    tallaPantalonChandal = fields.Char('Talla Pantaloneta', required=True) 
+    tallaCamiseta = fields.Char('Camiseta', required=False)
+    tallaSudadera = fields.Char('Sudadera', required=False)
+    tallaPolo = fields.Char('Polo', required=False)
+    tallaChaquetaChandal = fields.Char('Chaqueta Chandal', required=False)
+    tallaPantalonChandal = fields.Char('Pantalón Chandal', required=False) 
 
     equipo_jugador_ids = fields.Many2many('xativa.equipo', 'equipo_jugador_rel', 'persona_id', 'equipo_id', string='Equipos como jugador')
     equipo_invitados_ids = fields.Many2many('xativa.equipo', 'equipo_invitado_rel', 'persona_id', 'equipo_id', string='Equipos como invitado')
     equipo_entrenador_ids = fields.Many2many('xativa.equipo', 'equipo_oficial_rel', 'persona_id', 'equipo_id', string='Equipos como oficial')
     equipo_staff_adicional_ids = fields.Many2many('xativa.equipo', 'equipo_staff_adicional_rel', 'persona_id', 'equipo_id', string='Equipos como staff adicional')
-    directiva_id = fields.Many2one('xativa.directiva', string='Cargo directivo', select=True)
+    directiva_id = fields.Many2one('xativa.directiva', string='Cargo directivo')
+    pagos_ids = fields.One2many('xativa.pago', 'persona_id', string='Pagos')
+
    
 
 
