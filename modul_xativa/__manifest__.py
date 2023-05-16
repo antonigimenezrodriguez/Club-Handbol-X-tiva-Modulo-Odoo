@@ -3,6 +3,7 @@
     'summary': "Administració Club Handbol Xàtiva",
     'description': """Long description""",
     'author': "Antoni Gimenez",
+    'application': True,
     'license': "AGPL-3",
     'website': "http://www.clubhandbolxativa.com",
     'category': 'Uncategorized',

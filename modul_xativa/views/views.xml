@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<data>
-		<record model="ir.actions.act_window" id="action_xativa_equipo">
-			<field name="name">Equipo</field>
-			<field name="res_model">xativa.equipo</field>
+		<record model="ir.actions.act_window" id="action_xativa_equip">
+			<field name="name">Equip</field>
+			<field name="res_model">xativa.equip</field>
 			<field name="view_mode">tree,form</field>
 		</record>
 
@@ -31,27 +31,27 @@
 			<field name="view_mode">tree,form</field>
 		</record>
 
-		<record model="ir.actions.act_window" id="action_xativa_pagos">
-			<field name="name">Pago</field>
-			<field name="res_model">xativa.pago</field>
+		<record model="ir.actions.act_window" id="action_xativa_pagaments">
+			<field name="name">Pagament</field>
+			<field name="res_model">xativa.pagament</field>
 			<field name="view_mode">tree,form</field>
 		</record>
 
 		<menuitem name="Xàtiva" id="xativa_menu_1" />
-		<menuitem name="Equipo" parent="xativa_menu_1" id="xativa_menu_2_equipo" action="action_xativa_equipo" />
+		<menuitem name="Equip" parent="xativa_menu_1" id="xativa_menu_2_equip" action="action_xativa_equip" />
 		<menuitem name="Persona" parent="xativa_menu_1" id="xativa_menu_2_persona" action="action_xativa_persona" />
 		<menuitem name="Temporada" parent="xativa_menu_1" id="xativa_menu_2_temporada" action="action_xativa_temporada" />
 		<menuitem name="Directiva" parent="xativa_menu_1" id="xativa_menu_2_directiva" action="action_xativa_directiva" />
 		<menuitem name="Esponsors" parent="xativa_menu_1" id="xativa_menu_2_esponsor" action="action_xativa_esponsor" />
-		<menuitem name="Pagos" parent="xativa_menu_1" id="xativa_menu_2_pagos" action="action_xativa_pagos" />
+		<menuitem name="Pagaments" parent="xativa_menu_1" id="xativa_menu_2_pagaments" action="action_xativa_pagaments" />
 
-		<record model="ir.ui.view" id="view_xativa_equipo_tree">
-			<field name="name">view_xativa_equipo_tree</field>
-			<field name="model">xativa.equipo</field>
+		<record model="ir.ui.view" id="view_xativa_equip_tree">
+			<field name="name">view_xativa_equip_tree</field>
+			<field name="model">xativa.equip</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
-				<tree string="equipo">
-					<field name="nombreComercial" />
+				<tree string="equip">
+					<field name="nomComercial" />
 					<field name="superficie" />
 					<field name="categoria" />
 					<field name="temporada_id" />
@@ -76,11 +76,11 @@
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="esponsor">
-					<field name="nombreEsponsor" />
-					<field name="importeSinIVA" />
-					<field name="importeConIVA" />
-					<field name="datosFiscales" />
-					<field name="equipo_ids" />
+					<field name="nomEsponsor" />
+					<field name="importSenseIVA" />
+					<field name="importAmbIVA" />
+					<field name="dadesFiscals" />
+					<field name="equips_ids" />
 				</tree>
 			</field>
 		</record>
@@ -91,9 +91,9 @@
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="persona">
-					<field name="nombre" />
-					<field name="apellidos" />
-					<field name="fechaNacimiento" />
+					<field name="nom" />
+					<field name="cognoms" />
+					<field name="dataNaixement" />
 					<field name="categoria" />
 				</tree>
 			</field>
@@ -105,22 +105,22 @@
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="directiva">
-					<field name="cargo" />
-					<field name="personas" />
+					<field name="carrec" />
+					<field name="persones" />
 				</tree>
 			</field>
 		</record>
 
-		<record model="ir.ui.view" id="view_xativa_pagos_tree">
-			<field name="name">view_xativa_pagos_tree</field>
-			<field name="model">xativa.pago</field>
+		<record model="ir.ui.view" id="view_xativa_pagaments_tree">
+			<field name="name">view_xativa_pagaments_tree</field>
+			<field name="model">xativa.pagament</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
-				<tree string="pago">
+				<tree string="pagament">
 					<field name="persona_id" />
-					<field name="concepto" />
+					<field name="concepte" />
 					<field name="importe" />
-					<field name="fechaPago" />
+					<field name="dataPagament" />
 				</tree>
 			</field>
 		</record>
@@ -137,34 +137,34 @@
 								<field name="foto" widget="image" />
 							</group>
 							<group colspan="4">
-								<field name="nombre" />
-								<field name="apellidos" />
-								<field name="tipoIdentificacion" />
-								<field name="identificacion" />
-								<field name="correoElectronico" />
-								<field name="telefono" />
-								<field name="sexo" />
+								<field name="nom" />
+								<field name="cognoms" />
+								<field name="tipusIdentificacio" />
+								<field name="identificacio" />
+								<field name="correuElectronic" />
+								<field name="telefon" />
+								<field name="sexe" />
 							</group>
 							<group colspan="4">
-								<field name="fechaNacimiento" />
+								<field name="dataNaixement" />
 								<field name="categoria" />
-								<field name="paisNacimiento" />
-								<field name="direccionResidencia" />
-								<field name="codigoPostal" />
-								<field name="localidad" />
+								<field name="paisNaixement" />
+								<field name="direccioResidencia" />
+								<field name="codiPostal" />
+								<field name="localitat" />
 								<field name="provincia" />
 								<field name="paisResidencia" />
 							</group>
 						</group>
 						<group col="12">
 							<group colspan="4">
-								<field name="validezIdentificacion" />
+								<field name="validesaIdentificacio" />
 							</group>	
 							<group colspan="4">
-								<field name="identificacionAnverso" widget="image" />
+								<field name="identificacioAnvers" widget="image" />
 							</group>
 							<group colspan="4">
-								<field name="identificacionReverso" widget="image" />
+								<field name="identificacioRevers" widget="image" />
 							</group>
 						</group>
 						<group col="12" string="Dorsals i talles">
@@ -177,70 +177,70 @@
 								<field name="tallaPolo" />
 							</group>
 							<group colspan="4">
-								<field name="tallaChaquetaChandal" />
-								<field name="tallaPantalonChandal" />
+								<field name="tallaJaquetaXandall" />
+								<field name="tallaPantaloXandall" />
 							</group>
 						</group>
 						
 						<group col="12" string="Federació">
 							<group colspan="4">
-								<field name="afiliadoFederacion" />
-								<field name="validadoFederacion" />
+								<field name="afiliatFederacio" />
+								<field name="validatFederacio" />
 							</group>	
 							<group colspan="4">
-								<field name="seguroObligatorio" />
-								<field name="seguroSolicitado" />
-								<field name="seguroPagado" />
+								<field name="segurObligatori" />
+								<field name="segurSolicitat" />
+								<field name="segurPagat" />
 							</group>
 							<group colspan="4">
-								<field name="jugadorReconocimientoMedico" />
-								<field name="jugadorAutorizacionCategoriaSuperior" />
+								<field name="jugadorReconeixementMedic" />
+								<field name="jugadorAutoritzacioCategoriaSuperior" />
 							</group>
 						</group>
 						<group col="12" string="Tutor">
 							<group colspan="4">
-								<field name="nombreTutor" />
-								<field name="identificacionTutor" />
+								<field name="nomTutor" />
+								<field name="identificacioTutor" />
 							</group>	
 							<group colspan="4">
 								<field name="mailTutor" />
-								<field name="documentoAutorizacionTutor" />
+								<field name="documentAutoritzacioTutor" />
 							</group>
 							<group colspan="4">
-								<field name="telefonoTutor" />
-								<field name="documentoIdentificacionTutor" />
+								<field name="telefonTutor" />
+								<field name="documentIdentificacioTutor" />
 							</group>
 						</group>
 						<group col="12" string="Oficial">
 							<group colspan="4">
-								<field name="entrenadorTituloMonitorNivel1" />
-								<field name="entrenadorCertificadoDelitosSexuales" />
+								<field name="entrenadorTitolMonitorNivell1" />
+								<field name="entrenadorCertificatDelictesSexuals" />
 							</group>	
 							<group colspan="4">
-								<field name="entrenadorTituloMonitorNivel2" />
+								<field name="entrenadorTitolMonitorNivell2" />
 							</group>
 							<group colspan="4">
-								<field name="entrenadorTituloMonitorNivel3" />
+								<field name="entrenadorTitolMonitorNivell3" />
 							</group>
 						</group>
 
 
 						
 						<notebook colspan="10">
-							<page string="Equipos como jugador">
-								<field name="equipo_jugador_ids" />
+							<!-- <page string="Equips com jugador">
+								<field name="equip_jugador_ids" />
 							</page>
-							<page string="Equipos como oficial">
-								<field name="equipo_entrenador_ids" />
+							<page string="Equips com oficial">
+								<field name="equip_entrenador_ids" />
 							</page>
-							<page string="Equipos como invitado">
-								<field name="equipo_invitados_ids" />
+							<page string="Equips com convidat">
+								<field name="equip_convidats_ids" />
 							</page>
-							<page string="Equipos como staff adicional">
-								<field name="equipo_staff_adicional_ids" />
-							</page>
-							<page string="Pagos">
-								<field name="pagos_ids" />
+							<page string="Equips como staff addicional">
+								<field name="equip_staff_addicional_ids" />
+							</page> -->
+							<page string="Pagaments">
+								<field name="pagaments_ids" />
 							</page>
 						</notebook>
 					</sheet>
