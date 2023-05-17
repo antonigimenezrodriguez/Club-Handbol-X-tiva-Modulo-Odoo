@@ -102,6 +102,7 @@
 					<field name="cognoms" />
 					<field name="dataNaixement" />
 					<field name="categoria" />
+					<field name="validesaIdentificacio"/>
 				</tree>
 			</field>
 		</record>
