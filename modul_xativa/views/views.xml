@@ -41,16 +41,38 @@
 			<field name="name">Cobrament</field>
 			<field name="res_model">xativa.cobrament</field>
 			<field name="view_mode">tree,form</field>
+		</record>		
+		
+		<record model="ir.actions.act_window" id="action_xativa_facturesRebudes">
+			<field name="name">Factura Rebuda</field>
+			<field name="res_model">xativa.facturarebuda</field>
+			<field name="view_mode">tree,form</field>
 		</record>
 
-		<menuitem name="Xàtiva" id="xativa_menu_1" />
-		<menuitem name="Equip" parent="xativa_menu_1" id="xativa_menu_2_equip" action="action_xativa_equip" />
-		<menuitem name="Persona" parent="xativa_menu_1" id="xativa_menu_2_persona" action="action_xativa_persona" />
-		<menuitem name="Temporada" parent="xativa_menu_1" id="xativa_menu_2_temporada" action="action_xativa_temporada" />
-		<menuitem name="Directiva" parent="xativa_menu_1" id="xativa_menu_2_directiva" action="action_xativa_directiva" />
-		<menuitem name="Esponsors" parent="xativa_menu_1" id="xativa_menu_2_esponsor" action="action_xativa_esponsor" />
-		<menuitem name="Pagaments" parent="xativa_menu_1" id="xativa_menu_2_pagaments" action="action_xativa_pagaments" />
-		<menuitem name="Cobraments" parent="xativa_menu_1" id="xativa_menu_2_cobraments" action="action_xativa_cobraments" />
+		<record model="ir.actions.act_window" id="action_xativa_facturesEmeses">
+			<field name="name">Factura Emesa</field>
+			<field name="res_model">xativa.facturaemesa</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_xativa_nomines">
+			<field name="name">Nómina</field>
+			<field name="res_model">xativa.nomina</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Esportiva" id="xativa_menu_esportiva" />
+		<menuitem name="Económica" id="xativa_menu_economica" />
+		<menuitem name="Equip" parent="xativa_menu_esportiva" id="xativa_menu_2_equip" action="action_xativa_equip" />
+		<menuitem name="Persona" parent="xativa_menu_esportiva" id="xativa_menu_2_persona" action="action_xativa_persona" />
+		<menuitem name="Temporada" parent="xativa_menu_esportiva" id="xativa_menu_2_temporada" action="action_xativa_temporada" />
+		<menuitem name="Directiva" parent="xativa_menu_esportiva" id="xativa_menu_2_directiva" action="action_xativa_directiva" />
+		<menuitem name="Esponsors" parent="xativa_menu_economica" id="xativa_menu_2_esponsor" action="action_xativa_esponsor" />
+		<menuitem name="Pagaments" parent="xativa_menu_economica" id="xativa_menu_2_pagaments" action="action_xativa_pagaments" />
+		<menuitem name="Cobraments" parent="xativa_menu_economica" id="xativa_menu_2_cobraments" action="action_xativa_cobraments" />
+		<menuitem name="Factures Rebudes" parent="xativa_menu_economica" id="xativa_menu_2_facturesRebudes" action="action_xativa_facturesRebudes" />
+		<menuitem name="Factures Emeses" parent="xativa_menu_economica" id="xativa_menu_2_facturesEmeses" action="action_xativa_facturesEmeses" />
+		<menuitem name="Nómines" parent="xativa_menu_economica" id="xativa_menu_2_nomines" action="action_xativa_nomines" />
 
 		<record model="ir.ui.view" id="view_xativa_equip_tree">
 			<field name="name">view_xativa_equip_tree</field>
@@ -147,6 +169,51 @@
 				</tree>
 			</field>
 		</record>
+
+		<record model="ir.ui.view" id="view_xativa_facturesEmeses_tree">
+			<field name="name">view_xativa_facturesEmeses_tree</field>
+			<field name="model">xativa.facturaemesa</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="facturaEmesa">
+					<field name="numeroFactura" />
+					<field name="empresa" />
+					<field name="total" />
+					<field name="cobrada" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_xativa_facturesRebudes_tree">
+			<field name="name">view_xativa_facturesRebudes_tree</field>
+			<field name="model">xativa.facturarebuda</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="facturaRebuda">
+					<field name="numeroFactura" />
+					<field name="empresa" />
+					<field name="total" />
+					<field name="pagada" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_xativa_nomines_tree">
+			<field name="name">view_xativa_nomines_tree</field>
+			<field name="model">xativa.nomina</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="nomina">
+					<field name="persona_id" />
+					<field name="any" />
+					<field name="mes" />
+					<field name="totalBrut" />
+					<field name="totalNet" />
+				</tree>
+			</field>
+		</record>
+
+
 
 		<record model="ir.ui.view" id="view_xativa_persona_form">
 			<field name="name">view_xativa_persona_form</field>

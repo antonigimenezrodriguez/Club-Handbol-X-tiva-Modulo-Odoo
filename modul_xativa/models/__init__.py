@@ -5,3 +5,6 @@ from . import xativa_temporada
 from . import xativa_esponsor
 from . import xativa_pagament
 from . import xativa_cobrament
+from . import xativa_facturaEmesa
+from . import xativa_facturaRebuda
+from . import xativa_nomina
