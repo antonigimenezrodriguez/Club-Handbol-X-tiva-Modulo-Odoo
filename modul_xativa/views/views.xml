@@ -103,6 +103,7 @@
 					<field name="dataNaixement" />
 					<field name="categoria" />
 					<field name="validesaIdentificacio"/>
+					<field name="jugadorReconeixementMedicData" />
 				</tree>
 			</field>
 		</record>
@@ -216,6 +217,7 @@
 							</group>
 							<group colspan="4">
 								<field name="jugadorReconeixementMedic" />
+								<field name="jugadorReconeixementMedicData" />
 								<field name="jugadorAutoritzacioCategoriaSuperior" />
 							</group>
 						</group>

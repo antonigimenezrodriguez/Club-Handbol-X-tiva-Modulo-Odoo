@@ -18,6 +18,7 @@ class XativaEsponsor(models.Model):
     observacions = fields.Text('Observacions', required=False)
     contracte = fields.Binary('Contracte', required=False)
     factura = fields.Binary('Factura', required=False)
+    justificant = fields.Binary('Justificant')
 
     equips_ids = fields.Many2many('xativa.equip', 'equip_esponsor_rel', 'esponsor_id', 'equip_id', string='Equips esponsoritzats')
 

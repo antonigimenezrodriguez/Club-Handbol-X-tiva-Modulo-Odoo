@@ -31,6 +31,7 @@ class XativaPersona(models.Model):
     segurSolicitat = fields.Boolean('Segur Sol·licitat', required=False)
     segurPagat = fields.Boolean('Segur Pagat', required=False)
     jugadorReconeixementMedic = fields.Binary('Reconeix. Médic', required=False)
+    jugadorReconeixementMedicData = fields.Date('Rec. Médic Data')
     jugadorAutoritzacioCategoriaSuperior = fields.Binary('Aut. Cat. Superior', required=False)
 
     identificacioTutor = fields.Char('Identificació', required=False)

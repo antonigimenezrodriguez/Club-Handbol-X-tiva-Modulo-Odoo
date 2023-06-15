@@ -6,6 +6,7 @@ class XativaPagament(models.Model):
     dataPagament = fields.Date('Data de pagament', required=True)
     importe = fields.Float('Import', required=True) # En castellà perque import es paraula reservada
     concepte = fields.Char('Concepte', required=True)
+    justificant = fields.Binary('Justificant')
     persona_id = fields.Many2one('xativa.persona', string='Persona')
        
        
