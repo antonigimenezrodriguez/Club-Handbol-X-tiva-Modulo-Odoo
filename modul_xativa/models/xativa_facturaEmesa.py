@@ -6,7 +6,7 @@ class XativaFacturaEmesa(models.Model):
     CIF = fields.Char('CIF')
     empresa = fields.Char('Empresa')
     direccio = fields.Char('Direcció')
-    dataFactura = fields.Char('Data Factura')
+    dataFactura = fields.Date('Data Factura')
     facturaDocument = fields.Binary('Document Factura')
     descripcio = fields.Char('Descripció')
     importSenveIVA = fields.Float('Import')
@@ -18,4 +18,4 @@ class XativaFacturaEmesa(models.Model):
 
     def _get_name(self):
         for record in self:
-            record.name = str(record.numeroFactura + record.empresa)
+            record.name = str(record.numeroFactura + ' ' + record.empresa)
