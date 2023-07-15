@@ -110,6 +110,7 @@
 					<field name="importSenseIVA" />
 					<field name="importAmbIVA" />
 					<field name="equips_ids" />
+					<field name="temporada_id" />
 				</tree>
 			</field>
 		</record>
