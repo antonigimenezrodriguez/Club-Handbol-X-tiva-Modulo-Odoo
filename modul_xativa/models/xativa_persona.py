@@ -61,6 +61,9 @@ class XativaPersona(models.Model):
     pagaments_ids = fields.One2many('xativa.pagament', 'persona_id', string='Pagaments')
     cobraments_ids = fields.One2many('xativa.cobrament', 'persona_id', string='Cobraments')
 
+    nomCamiseta = fields.Char('Nom', required=False)
+    tallaPantaloneta = fields.Char('Pantaloneta', required=False)
+
    
 
 

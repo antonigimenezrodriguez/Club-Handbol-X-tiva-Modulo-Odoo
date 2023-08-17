@@ -8,3 +8,4 @@ from . import xativa_cobrament
 from . import xativa_facturaEmesa
 from . import xativa_facturaRebuda
 from . import xativa_nomina
+from . import xativa_empresa

@@ -61,6 +61,12 @@
 			<field name="view_mode">tree,form</field>
 		</record>
 
+		<record model="ir.actions.act_window" id="action_xativa_empreses">
+			<field name="name">Empresa</field>
+			<field name="res_model">xativa.empresa</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
 		<menuitem name="Esportiva" id="xativa_menu_esportiva" />
 		<menuitem name="Económica" id="xativa_menu_economica" />
 		<menuitem name="Equip" parent="xativa_menu_esportiva" id="xativa_menu_2_equip" action="action_xativa_equip" />
@@ -73,6 +79,7 @@
 		<menuitem name="Factures Rebudes" parent="xativa_menu_economica" id="xativa_menu_2_facturesRebudes" action="action_xativa_facturesRebudes" />
 		<menuitem name="Factures Emeses" parent="xativa_menu_economica" id="xativa_menu_2_facturesEmeses" action="action_xativa_facturesEmeses" />
 		<menuitem name="Nómines" parent="xativa_menu_economica" id="xativa_menu_2_nomines" action="action_xativa_nomines" />
+		<menuitem name="Empreses" parent="xativa_menu_economica" id="xativa_menu_2_empreses" action="action_xativa_empreses" />
 
 		<record model="ir.ui.view" id="view_xativa_equip_tree">
 			<field name="name">view_xativa_equip_tree</field>
@@ -110,6 +117,7 @@
 					<field name="importSenseIVA" />
 					<field name="importAmbIVA" />
 					<field name="equips_ids" />
+					<field name="temporada_id" />
 				</tree>
 			</field>
 		</record>
@@ -177,7 +185,7 @@
 			<field name="arch" type="xml">
 				<tree string="facturaEmesa">
 					<field name="numeroFactura" />
-					<field name="empresa" />
+					<field name="empresa_id" />
 					<field name="total" />
 					<field name="cobrada" />
 				</tree>
@@ -191,7 +199,7 @@
 			<field name="arch" type="xml">
 				<tree string="facturaRebuda">
 					<field name="numeroFactura" />
-					<field name="empresa" />
+					<field name="empresa_id" />
 					<field name="total" />
 					<field name="pagada" />
 				</tree>
@@ -209,6 +217,22 @@
 					<field name="mes" />
 					<field name="totalBrut" />
 					<field name="totalNet" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_xativa_empresess_tree">
+			<field name="name">view_xativa_empreses_tree</field>
+			<field name="model">xativa.empresa</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="empresa">
+					<field name="rao_social" />
+					<field name="cif" />
+					<field name="direccio" />
+					<field name="poblacio" />
+					<field name="provincia" />
+					<field name="codi_postal" />
 				</tree>
 			</field>
 		</record>
@@ -258,15 +282,20 @@
 							</group>
 						</group>
 						<group col="12" string="Dorsals i talles">
-							<group colspan="4">
-								<field name="dorsal" />
+							<group colspan="3">
 								<field name="tallaCamiseta" />
-							</group>	
-							<group colspan="4">
+								<field name="tallaPantaloneta" />
+							
+							</group>
+							<group colspan="3">
+								<field name="dorsal" />
+								<field name="nomCamiseta" />
+							</group>
+							<group colspan="3">
 								<field name="tallaSudadera" />
 								<field name="tallaPolo" />
 							</group>
-							<group colspan="4">
+							<group colspan="3">
 								<field name="tallaJaquetaXandall" />
 								<field name="tallaPantaloXandall" />
 							</group>
