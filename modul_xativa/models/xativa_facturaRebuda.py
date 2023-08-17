@@ -3,9 +3,9 @@ class XativaFacturaRebuda(models.Model):
     _name = 'xativa.facturarebuda'
     name = fields.Char(compute='_get_name',string='Factura',readonly='true',store=False)
     numeroFactura = fields.Char('Número Factura')
-    CIF = fields.Char('CIF')
-    empresa = fields.Char('Empresa')
-    direccio = fields.Char('Direcció')
+    # CIF = fields.Char('CIF')
+    # empresa = fields.Char('Empresa')
+    # direccio = fields.Char('Direcció')
     dataFactura = fields.Date('Data Factura')
     facturaDocument = fields.Binary('Document Factura')
     descripcio = fields.Char('Descripció')
@@ -15,7 +15,9 @@ class XativaFacturaRebuda(models.Model):
     total = fields.Float('Total')
     pagada = fields.Boolean('Pagada')
     justificantPago = fields.Binary('Justificant')
+    empresa_id = fields.Many2one('xativa.empresa', string='Empresa')
+
 
     def _get_name(self):
         for record in self:
-            record.name = str(record.numeroFactura + ' ' + record.empresa)
+            record.name = str(record.numeroFactura)
