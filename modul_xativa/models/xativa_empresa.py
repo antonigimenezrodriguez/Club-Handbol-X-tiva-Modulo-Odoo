@@ -11,6 +11,7 @@ class XativaEmpresa(models.Model):
     
     facturesRebudes_ids = fields.One2many('xativa.facturarebuda', 'empresa_id', string='Factures rebudes')
     facturesEmeses_ids = fields.One2many('xativa.facturaemesa', 'empresa_id', string='Factures emeses')
+    sponsors_ids = fields.One2many('xativa.esponsor', 'empresa_id', string='Esponsors')
 
     def _get_name(self):
         for record in self:

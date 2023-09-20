@@ -63,6 +63,9 @@ class XativaPersona(models.Model):
 
     nomCamiseta = fields.Char('Nom', required=False)
     tallaPantaloneta = fields.Char('Pantaloneta', required=False)
+    esJugador = fields.Boolean("Es Jugador")
+    esOficial = fields.Boolean("Es Oficial")
+    actiu = fields.Boolean("Actiu")
 
    
 

@@ -6,12 +6,6 @@ class XativaEsponsor(models.Model):
     nomEsponsor = fields.Text('Nom', required=True)
     importSenseIVA = fields.Float('Import sense IVA', required=False)
     importAmbIVA = fields.Float('Import amb IVA', required=False)
-    cif = fields.Char('CIF', required=False)
-    direccio = fields.Char('Direcció', required=False)
-    codiPostal = fields.Integer('Codi postal', required=False)
-    localitat = fields.Char('Localitat', required=False)
-    provincia = fields.Char('Província', required=False)
-    pais = fields.Char('Pais', required=False)
     telefonsContacte = fields.Text('Telèfons de contacte', required=False)
     mailsContacte = fields.Text('Mails de contacte', required=False)
     personesContacte = fields.Text('Persones de contacte', required=False)
@@ -19,9 +13,11 @@ class XativaEsponsor(models.Model):
     contracte = fields.Binary('Contracte', required=False)
     factura = fields.Binary('Factura', required=False)
     justificant = fields.Binary('Justificant')
+    cobrat = fields.Boolean('Cobrat')
 
     equips_ids = fields.Many2many('xativa.equip', 'equip_esponsor_rel', 'esponsor_id', 'equip_id', string='Equips esponsoritzats')
     temporada_id = fields.Many2one('xativa.temporada', string='Temporada')
+    empresa_id = fields.Many2one('xativa.empresa', string='Empresa')
 
     
 

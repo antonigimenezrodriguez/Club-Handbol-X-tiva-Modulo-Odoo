@@ -113,11 +113,12 @@
 			<field name="arch" type="xml">
 				<tree string="esponsor">
 					<field name="nomEsponsor" />
-					<field name="cif" />
+					<field name="empresa_id" />
 					<field name="importSenseIVA" />
 					<field name="importAmbIVA" />
 					<field name="equips_ids" />
 					<field name="temporada_id" />
+					<field name="cobrat" />
 				</tree>
 			</field>
 		</record>
@@ -246,7 +247,7 @@
 			<field name="arch" type="xml">
 				<form string="Persona">
 					<sheet>
-						<group col="12" string="Dades identificatives">
+						<group col="12" string="Dades">
 							<group colspan="4">
 								<field name="foto" widget="image" />
 							</group>
@@ -258,6 +259,8 @@
 								<field name="correuElectronic" />
 								<field name="telefon" />
 								<field name="sexe" />
+								<field name="esJugador" />
+								<field name="esOficial" />
 							</group>
 							<group colspan="4">
 								<field name="dataNaixement" />
@@ -268,9 +271,10 @@
 								<field name="localitat" />
 								<field name="provincia" />
 								<field name="paisResidencia" />
+								<field name="actiu" />
 							</group>
 						</group>
-						<group col="12">
+						<group col="12" string="Identificació">
 							<group colspan="4">
 								<field name="validesaIdentificacio" />
 							</group>	
