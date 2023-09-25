@@ -18,6 +18,7 @@ class XativaEsponsor(models.Model):
     equips_ids = fields.Many2many('xativa.equip', 'equip_esponsor_rel', 'esponsor_id', 'equip_id', string='Equips esponsoritzats')
     temporada_id = fields.Many2one('xativa.temporada', string='Temporada')
     empresa_id = fields.Many2one('xativa.empresa', string='Empresa')
+    persona_id = fields.Many2one('xativa.persona', string='Persona desgrava')
 
     
 

@@ -1,6 +1,7 @@
 from odoo import models, fields     
 class XativaPersona(models.Model): 
     _name = 'xativa.persona'
+    _order = 'nom asc'
     name = fields.Char(compute='_get_name',string='Nom persona',readonly='true',store=False)
     
     nom = fields.Char('Nom', required=True)

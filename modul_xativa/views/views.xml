@@ -95,6 +95,19 @@
 			</field>
 		</record>
 
+		<record id="view_xativa_equip_search" model="ir.ui.view">
+			<field name="name">view_xativa_equip_search</field>
+			<field name="model">xativa.equip</field>
+			<field name="arch" type="xml">
+					<search>
+						<field name="nomComercial"/>
+						<field name="categoria"/>
+						<filter domain="[('temporada_id.temporada','=','2023-2024')]" name="temporadaActual" string="Temporada Actual"/>
+					</search>
+			</field>
+
+		</record>
+
 		<record model="ir.ui.view" id="view_xativa_temporada_tree">
 			<field name="name">view_xativa_temporada_tree</field>
 			<field name="model">xativa.temporada</field>
@@ -119,6 +132,7 @@
 					<field name="equips_ids" />
 					<field name="temporada_id" />
 					<field name="cobrat" />
+					<field name="persona_id" />
 				</tree>
 			</field>
 		</record>
@@ -135,6 +149,10 @@
 					<field name="categoria" />
 					<field name="validesaIdentificacio"/>
 					<field name="jugadorReconeixementMedicData" />
+					<field name="actiu" />
+					<field name="esJugador" />
+					<field name="esOficial" />
+					
 				</tree>
 			</field>
 		</record>
@@ -161,6 +179,7 @@
 					<field name="concepte" />
 					<field name="importe" />
 					<field name="dataPagament" />
+					<field name="categoria" />
 				</tree>
 			</field>
 		</record>
@@ -375,5 +394,37 @@
 				</form>
 			</field>
 		</record>
+
+		<record id="view_xativa_persona_search" model="ir.ui.view">
+			<field name="name">view_xativa_equip_persona</field>
+			<field name="model">xativa.persona</field>
+			<field name="arch" type="xml">
+					<search>
+						<field name="nom" />
+						<field name="cognoms" />
+						<field name="identificacio" />
+						<field name="correuElectronic" />
+						<field name="telefon" />
+						<field name="dataNaixement" />
+						<field name="categoria" />
+						<field name="paisNaixement" />
+						<field name="direccioResidencia" />
+						<field name="codiPostal" />
+						<field name="localitat" />
+						<field name="provincia" />
+						<field name="paisResidencia" />
+						<filter domain="[('actiu','=','True')]" name="actiu" string="Actiu"/>
+						<filter domain="[('esJugador','=','True')]" name="jugadors" string="Jugadors"/>
+						<filter domain="[('esOficial','=','True')]" name="entrenadors" string="entrenadors"/>
+					</search>
+			</field>
+
+		</record>
+
+
+
+
+
+
 	</data>
 </odoo>
