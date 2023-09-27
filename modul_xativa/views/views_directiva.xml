@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_xativa_directiva">
+        <field name="name">Directiva</field>
+        <field name="res_model">xativa.directiva</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Directiva" parent="xativa_menu_esportiva" id="xativa_menu_2_directiva" action="action_xativa_directiva" />
+
+    <record model="ir.ui.view" id="view_xativa_directiva_tree">
+        <field name="name">view_xativa_directiva_tree</field>
+        <field name="model">xativa.directiva</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="directiva">
+                <field name="carrec" />
+                <field name="persones" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

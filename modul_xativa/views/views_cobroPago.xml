@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_xativa_pagaments">
+        <field name="name">Pagament</field>
+        <field name="res_model">xativa.pagament</field>
+        <field name="view_mode">tree,form</field>
+    </record>		
+    
+    <record model="ir.actions.act_window" id="action_xativa_cobraments">
+        <field name="name">Cobrament</field>
+        <field name="res_model">xativa.cobrament</field>
+        <field name="view_mode">tree,form</field>
+    </record>		
+
+    <menuitem name="Pagaments" parent="xativa_menu_economica" id="xativa_menu_2_pagaments" action="action_xativa_pagaments" />
+    <menuitem name="Cobraments" parent="xativa_menu_economica" id="xativa_menu_2_cobraments" action="action_xativa_cobraments" />
+
+    <record model="ir.ui.view" id="view_xativa_pagaments_tree">
+        <field name="name">view_xativa_pagaments_tree</field>
+        <field name="model">xativa.pagament</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="pagament">
+                <field name="persona_id" />
+                <field name="concepte" />
+                <field name="importe" />
+                <field name="dataPagament" />
+                <field name="categoria" />
+                <field name="temporada_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_xativa_cobraments_tree">
+        <field name="name">view_xativa_cobraments_tree</field>
+        <field name="model">xativa.cobrament</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="cobrament">
+                <field name="persona_id" />
+                <field name="concepte" />
+                <field name="importe" />
+                <field name="dataCobrament" />
+                <field name="categoria" />
+                <field name="temporada_id" />
+            </tree>
+        </field>
+    </record>
+
+</odoo> 

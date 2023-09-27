@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<odoo>
+    <record model="ir.actions.act_window" id="action_xativa_equip">
+        <field name="name">Equip</field>
+        <field name="res_model">xativa.equip</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+	<menuitem name="Equip" parent="xativa_menu_esportiva" id="xativa_menu_2_equip" action="action_xativa_equip" />
+
+    <record model="ir.ui.view" id="view_xativa_equip_tree">
+        <field name="name">view_xativa_equip_tree</field>
+        <field name="model">xativa.equip</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="equip">
+                <field name="nomComercial" />
+                <field name="superficie" />
+                <field name="categoria" />
+                <field name="temporada_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_xativa_equip_search" model="ir.ui.view">
+        <field name="name">view_xativa_equip_search</field>
+        <field name="model">xativa.equip</field>
+        <field name="arch" type="xml">
+                <search>
+                    <field name="nomComercial"/>
+                    <field name="categoria"/>
+                    <filter domain="[('temporada_id.temporada','=','2023-2024')]" name="temporadaActual" string="Temporada Actual"/>
+                </search>
+        </field>
+
+    </record>
+
+</odoo>

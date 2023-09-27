@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_xativa_temporada">
+        <field name="name">Temporada</field>
+        <field name="res_model">xativa.temporada</field>
+        <field name="view_mode">tree,form</field>
+    </record>	
+
+	<menuitem name="Temporada" parent="xativa_menu_esportiva" id="xativa_menu_2_temporada" action="action_xativa_temporada" />
+
+    <record model="ir.ui.view" id="view_xativa_temporada_tree">
+        <field name="name">view_xativa_temporada_tree</field>
+        <field name="model">xativa.temporada</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="temporada">
+                <field name="temporada" />
+            </tree>
+        </field>
+    </record>		
+
+</odoo> 

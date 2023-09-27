@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_xativa_empreses">
+        <field name="name">Empresa</field>
+        <field name="res_model">xativa.empresa</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Empreses" parent="xativa_menu_economica" id="xativa_menu_2_empreses" action="action_xativa_empreses" />
+
+    <record model="ir.ui.view" id="view_xativa_empresess_tree">
+        <field name="name">view_xativa_empreses_tree</field>
+        <field name="model">xativa.empresa</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="empresa">
+                <field name="rao_social" />
+                <field name="cif" />
+                <field name="direccio" />
+                <field name="poblacio" />
+                <field name="provincia" />
+                <field name="codi_postal" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

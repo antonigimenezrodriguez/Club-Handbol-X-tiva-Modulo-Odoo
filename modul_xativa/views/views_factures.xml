@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<odoo>
+    <record model="ir.actions.act_window" id="action_xativa_facturesRebudes">
+        <field name="name">Factura Rebuda</field>
+        <field name="res_model">xativa.facturarebuda</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_xativa_facturesEmeses">
+        <field name="name">Factura Emesa</field>
+        <field name="res_model">xativa.facturaemesa</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Factures Rebudes" parent="xativa_menu_economica" id="xativa_menu_2_facturesRebudes" action="action_xativa_facturesRebudes" />
+	<menuitem name="Factures Emeses" parent="xativa_menu_economica" id="xativa_menu_2_facturesEmeses" action="action_xativa_facturesEmeses" />
+		
+    <record model="ir.ui.view" id="view_xativa_facturesEmeses_tree">
+        <field name="name">view_xativa_facturesEmeses_tree</field>
+        <field name="model">xativa.facturaemesa</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="facturaEmesa">
+                <field name="numeroFactura" />
+                <field name="dataFactura" />
+                <field name="empresa_id" />
+                <field name="total" />
+                <field name="cobrada" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_xativa_facturesRebudes_tree">
+        <field name="name">view_xativa_facturesRebudes_tree</field>
+        <field name="model">xativa.facturarebuda</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="facturaRebuda">
+                <field name="numeroFactura" />
+                <field name="dataFactura" />
+                <field name="empresa_id" />
+                <field name="total" />
+                <field name="pagada" />
+            </tree>
+        </field>
+    </record>
+
+</odoo> 

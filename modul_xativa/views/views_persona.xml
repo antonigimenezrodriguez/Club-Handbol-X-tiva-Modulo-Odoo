@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<odoo>
+    <record model="ir.actions.act_window" id="action_xativa_persona">
+        <field name="name">Persona</field>
+        <field name="res_model">xativa.persona</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Persona" parent="xativa_menu_esportiva" id="xativa_menu_2_persona" action="action_xativa_persona" />
+    
+    <record model="ir.ui.view" id="view_xativa_persona_tree">
+        <field name="name">view_xativa_persona_tree</field>
+        <field name="model">xativa.persona</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="persona">
+                <field name="nom" />
+                <field name="cognoms" />
+                <field name="dataNaixement" />
+                <field name="categoria" />
+                <field name="validesaIdentificacio" />
+                <field name="jugadorReconeixementMedicData" />
+                <field name="actiu" />
+                <field name="esJugador" />
+                <field name="esOficial" />
+
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_xativa_persona_form">
+        <field name="name">view_xativa_persona_form</field>
+        <field name="model">xativa.persona</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Persona">
+                <sheet>
+                    <group col="12" string="Dades">
+                        <group colspan="4">
+                            <field name="foto" widget="image" />
+                        </group>
+                        <group colspan="4">
+                            <field name="nom" />
+                            <field name="cognoms" />
+                            <field name="tipusIdentificacio" />
+                            <field name="identificacio" />
+                            <field name="correuElectronic" />
+                            <field name="telefon" />
+                            <field name="sexe" />
+                            <field name="esJugador" />
+                            <field name="esOficial" />
+                        </group>
+                        <group colspan="4">
+                            <field name="dataNaixement" />
+                            <field name="categoria" />
+                            <field name="paisNaixement" />
+                            <field name="direccioResidencia" />
+                            <field name="codiPostal" />
+                            <field name="localitat" />
+                            <field name="provincia" />
+                            <field name="paisResidencia" />
+                            <field name="actiu" />
+                        </group>
+                        <group colspan="4">
+                        </group>
+                        <group colspan="8">
+                            <field name="IBAN" />
+                        </group>
+                    </group>
+                    <group col="12" string="Identificació">
+                        <group colspan="4">
+                            <field name="validesaIdentificacio" />
+                        </group>
+                        <group colspan="4">
+                            <field name="identificacioAnvers" widget="image" />
+                        </group>
+                        <group colspan="4">
+                            <field name="identificacioRevers" widget="image" />
+                        </group>
+                    </group>
+                    <group col="12" string="Dorsals i talles">
+                        <group colspan="3">
+                            <field name="tallaCamiseta" />
+                            <field name="tallaPantaloneta" />
+
+                        </group>
+                        <group colspan="3">
+                            <field name="dorsal" />
+                            <field name="nomCamiseta" />
+                        </group>
+                        <group colspan="3">
+                            <field name="tallaSudadera" />
+                            <field name="tallaPolo" />
+                        </group>
+                        <group colspan="3">
+                            <field name="tallaJaquetaXandall" />
+                            <field name="tallaPantaloXandall" />
+                        </group>
+                    </group>
+
+                    <group col="12" string="Federació">
+                        <group colspan="4">
+                            <field name="afiliatFederacio" />
+                            <field name="validatFederacio" />
+                        </group>
+                        <group colspan="4">
+                            <field name="segurObligatori" />
+                            <field name="segurSolicitat" />
+                            <field name="segurPagat" />
+                        </group>
+                        <group colspan="4">
+                            <field name="jugadorReconeixementMedic" />
+                            <field name="jugadorReconeixementMedicData" />
+                            <field name="jugadorAutoritzacioCategoriaSuperior" />
+                        </group>
+                    </group>
+                    <group col="12" string="Tutor">
+                        <group colspan="4">
+                            <field name="nomTutor" />
+                            <field name="identificacioTutor" />
+                        </group>
+                        <group colspan="4">
+                            <field name="mailTutor" />
+                            <field name="documentAutoritzacioTutor" />
+                        </group>
+                        <group colspan="4">
+                            <field name="telefonTutor" />
+                            <field name="documentIdentificacioTutor" />
+                        </group>
+                    </group>
+                    <group col="12" string="Oficial">
+                        <group colspan="4">
+                            <field name="entrenadorTitolMonitorNivell1" />
+                            <field name="entrenadorCertificatDelictesSexuals" />
+                        </group>
+                        <group colspan="4">
+                            <field name="entrenadorTitolMonitorNivell2" />
+                            <field name="entrenadorDataCertificatDelictesSexuals" />
+                        </group>
+                        <group colspan="4">
+                            <field name="entrenadorTitolMonitorNivell3" />
+                            <field name="directiva_id" />
+                        </group>
+                    </group>
+
+                    <notebook colspan="10">
+                        <page string="Pagaments">
+                            <field name="pagaments_ids" />
+                        </page>
+                        <page string="Cobraments">
+                            <field name="cobraments_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_xativa_persona_search" model="ir.ui.view">
+        <field name="name">view_xativa_equip_persona</field>
+        <field name="model">xativa.persona</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="nom" />
+                <field name="cognoms" />
+                <field name="identificacio" />
+                <field name="correuElectronic" />
+                <field name="telefon" />
+                <field name="dataNaixement" />
+                <field name="categoria" />
+                <field name="paisNaixement" />
+                <field name="direccioResidencia" />
+                <field name="codiPostal" />
+                <field name="localitat" />
+                <field name="provincia" />
+                <field name="paisResidencia" />
+                <filter domain="[('actiu','=','True')]" name="actiu" string="Actiu" />
+                <filter domain="[('esJugador','=','True')]" name="jugadors" string="Jugadors" />
+                <filter domain="[('esOficial','=','True')]" name="entrenadors" string="entrenadors" />
+            </search>
+        </field>
+    </record>
+
+</odoo>
