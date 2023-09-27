@@ -127,8 +127,8 @@
 				<tree string="esponsor">
 					<field name="nomEsponsor" />
 					<field name="empresa_id" />
-					<field name="importSenseIVA" />
-					<field name="importAmbIVA" />
+					<field name="importSenseIVA" widget="monetary"/>
+					<field name="importAmbIVA" widget="monetary"/>
 					<field name="equips_ids" />
 					<field name="temporada_id" />
 					<field name="cobrat" />
@@ -180,6 +180,7 @@
 					<field name="importe" />
 					<field name="dataPagament" />
 					<field name="categoria" />
+					<field name="temporada_id" />
 				</tree>
 			</field>
 		</record>
@@ -194,6 +195,8 @@
 					<field name="concepte" />
 					<field name="importe" />
 					<field name="dataCobrament" />
+					<field name="categoria" />
+					<field name="temporada_id" />
 				</tree>
 			</field>
 		</record>
@@ -205,6 +208,7 @@
 			<field name="arch" type="xml">
 				<tree string="facturaEmesa">
 					<field name="numeroFactura" />
+					<field name="dataFactura" />
 					<field name="empresa_id" />
 					<field name="total" />
 					<field name="cobrada" />
@@ -219,6 +223,7 @@
 			<field name="arch" type="xml">
 				<tree string="facturaRebuda">
 					<field name="numeroFactura" />
+					<field name="dataFactura" />
 					<field name="empresa_id" />
 					<field name="total" />
 					<field name="pagada" />
@@ -292,6 +297,11 @@
 								<field name="paisResidencia" />
 								<field name="actiu" />
 							</group>
+							<group colspan="4">
+							</group>
+							<group colspan="8">
+								<field name="IBAN" />
+							</group>	
 						</group>
 						<group col="12" string="Identificació">
 							<group colspan="4">
@@ -361,6 +371,7 @@
 							</group>	
 							<group colspan="4">
 								<field name="entrenadorTitolMonitorNivell2" />
+								<field name="entrenadorDataCertificatDelictesSexuals" />
 							</group>
 							<group colspan="4">
 								<field name="entrenadorTitolMonitorNivell3" />
