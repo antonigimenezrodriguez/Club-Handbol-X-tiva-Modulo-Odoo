@@ -19,4 +19,4 @@ class XativaFacturaEmesa(models.Model):
 
     def _get_name(self):
         for record in self:
-            record.name = str(record.numeroFactura)
+            record.name = str(record.numeroFactura) + ' - ' + record.empresa_id.rao_social

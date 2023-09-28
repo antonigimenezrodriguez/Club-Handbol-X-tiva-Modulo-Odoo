@@ -11,7 +11,6 @@ class XativaEsponsor(models.Model):
     personesContacte = fields.Text('Persones de contacte', required=False)
     observacions = fields.Text('Observacions', required=False)
     contracte = fields.Binary('Contracte', required=False)
-    factura = fields.Binary('Factura', required=False)
     justificant = fields.Binary('Justificant')
     cobrat = fields.Boolean('Cobrat')
     importDesgravat = fields.Float('Import desgravat')
@@ -20,6 +19,8 @@ class XativaEsponsor(models.Model):
     temporada_id = fields.Many2one('xativa.temporada', string='Temporada')
     empresa_id = fields.Many2one('xativa.empresa', string='Empresa')
     persona_id = fields.Many2one('xativa.persona', string='Persona desgrava')
+    factura_id = fields.Many2one('xativa.facturaemesa', required=False)
+
 
     
 
