@@ -23,6 +23,7 @@
         <field name="arch" type="xml">
             <tree string="pagament">
                 <field name="persona_id" />
+                <field name="pagat" />
                 <field name="concepte" />
                 <field name="importe" />
                 <field name="dataPagament" />
