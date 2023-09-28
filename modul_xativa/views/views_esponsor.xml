@@ -14,6 +14,8 @@
         <field name="type">tree</field>
         <field name="arch" type="xml">
             <tree string="esponsor">
+                <field name="numero" />
+                <field name="c" />
                 <field name="nomEsponsor" />
                 <field name="empresa_id" />
                 <field name="importSenseIVA" widget="monetary"/>

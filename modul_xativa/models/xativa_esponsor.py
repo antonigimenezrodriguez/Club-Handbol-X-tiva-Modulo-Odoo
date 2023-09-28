@@ -14,6 +14,8 @@ class XativaEsponsor(models.Model):
     justificant = fields.Binary('Justificant')
     cobrat = fields.Boolean('Cobrat')
     importDesgravat = fields.Float('Import desgravat')
+    numero = fields.Integer('Nº')
+    c = fields.Integer('C')
 
     equips_ids = fields.Many2many('xativa.equip', 'equip_esponsor_rel', 'esponsor_id', 'equip_id', string='Equips esponsoritzats')
     temporada_id = fields.Many2one('xativa.temporada', string='Temporada')
