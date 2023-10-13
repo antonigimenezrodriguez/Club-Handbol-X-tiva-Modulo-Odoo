@@ -3,9 +3,6 @@ class XativaFacturaRebuda(models.Model):
     _name = 'xativa.facturarebuda'
     name = fields.Char(compute='_get_name',string='Factura',readonly='true',store=False)
     numeroFactura = fields.Char('Número Factura')
-    # CIF = fields.Char('CIF')
-    # empresa = fields.Char('Empresa')
-    # direccio = fields.Char('Direcció')
     dataFactura = fields.Date('Data Factura')
     facturaDocument = fields.Binary('Document Factura')
     descripcio = fields.Char('Descripció')

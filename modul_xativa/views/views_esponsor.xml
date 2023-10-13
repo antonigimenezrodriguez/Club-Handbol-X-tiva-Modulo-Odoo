@@ -4,6 +4,7 @@
         <field name="name">Esponsor</field>
         <field name="res_model">xativa.esponsor</field>
         <field name="view_mode">tree,form</field>
+        <field name="context">{"search_default_temporada2324":1}</field>    
     </record>
 
 	<menuitem name="Esponsors" parent="xativa_menu_economica" id="xativa_menu_2_esponsor" action="action_xativa_esponsor" />
@@ -18,8 +19,8 @@
                 <field name="c" />
                 <field name="nomEsponsor" />
                 <field name="empresa_id" />
-                <field name="importSenseIVA" widget="monetary"/>
-                <field name="importAmbIVA" widget="monetary"/>
+                <field name="importSenseIVA" />
+                <field name="importAmbIVA"/>
                 <field name="equips_ids" />
                 <field name="temporada_id" />
                 <field name="cobrat" />
@@ -28,5 +29,22 @@
             </tree>
         </field>
     </record>
+
+    <record id="view_xativa_esponsor_search" model="ir.ui.view">
+        <field name="name">view_xativa_esponsor_search</field>
+        <field name="model">xativa.esponsor</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="nomEsponsor" />
+                <field name="importSenseIVA" />
+                <field name="importAmbIVA" />
+                <field name="importDesgravat" />
+                <filter domain="[('temporada_id.temporada','=','2023-2024')]" name="temporada2324" string="Temporada 2023-2024"/>
+                <filter domain="[('cobrat','=','True')]" name="cobrat" string="Cobrat" />
+                <filter domain="[('cobrat','=',False)]" name="nocobrat" string="No Cobrat" />
+            </search>
+        </field>
+    </record>
+
 
 </odoo>

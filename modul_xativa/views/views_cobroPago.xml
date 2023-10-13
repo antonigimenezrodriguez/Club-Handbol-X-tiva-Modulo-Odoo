@@ -23,10 +23,11 @@
         <field name="arch" type="xml">
             <tree string="pagament">
                 <field name="persona_id" />
-                <field name="pagat" />
-                <field name="concepte" />
-                <field name="importe" />
                 <field name="dataPagament" />
+                <field name="formaPagament" />
+                <field name="concepte" />
+                <field name="pagat" />
+                <field name="importe" />
                 <field name="categoria" />
                 <field name="temporada_id" />
             </tree>
@@ -41,11 +42,53 @@
             <tree string="cobrament">
                 <field name="persona_id" />
                 <field name="concepte" />
+                <field name="cobrat" />
                 <field name="importe" />
                 <field name="dataCobrament" />
+                <field name="formaCobrament" />
                 <field name="categoria" />
                 <field name="temporada_id" />
             </tree>
+        </field>
+    </record>
+
+    <record id="view_xativa_pagaments_search" model="ir.ui.view">
+        <field name="name">view_xativa_pagaments_search</field>
+        <field name="model">xativa.pagament</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="concepte" />
+                <field name="importe" />
+                <field name="dataPagament" />
+                <filter domain="[('temporada_id.temporada','=','2023-2024')]" name="temporada20232024" string="Temporada 2023-2024"/>
+                <filter domain="[('pagat','=','True')]" name="pagat" string="Pagat" />
+                <filter domain="[('pagat','=',False)]" name="nopagat" string="No Pagat" />
+                <filter domain="[('persona_id.categoria','=','Senior')]" name="senior" string="Senior"/>
+                <filter domain="[('persona_id.categoria','=','Juvenil')]" name="juvenil" string="Juvenil"/>
+                <filter domain="[('persona_id.categoria','=','Cadet')]" name="cadet" string="Cadet"/>
+                <filter domain="[('persona_id.categoria','=','Infantil')]" name="infantil" string="Infantil"/>
+                <filter domain="[('persona_id.categoria','=','Aleví')]" name="alevi" string="Aleví"/>
+                <filter domain="[('persona_id.categoria','=','Benjamí')]" name="benjami" string="Benjamí"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_xativa_cobraments_search" model="ir.ui.view">
+        <field name="name">view_xativa_cobraments_search</field>
+        <field name="model">xativa.cobrament</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="concepte" />
+                <field name="importe" />
+                <field name="dataCobrament" />
+                <filter domain="[('temporada_id.temporada','=','2023-2024')]" name="temporada2324" string="Temporada 2023-2024"/>
+                <filter domain="[('persona_id.categoria','=','Senior')]" name="senior" string="Senior"/>
+                <filter domain="[('persona_id.categoria','=','Juvenil')]" name="juvenil" string="Juvenil"/>
+                <filter domain="[('persona_id.categoria','=','Cadet')]" name="cadet" string="Cadet"/>
+                <filter domain="[('persona_id.categoria','=','Infantil')]" name="infantil" string="Infantil"/>
+                <filter domain="[('persona_id.categoria','=','Aleví')]" name="alevi" string="Aleví"/>
+                <filter domain="[('persona_id.categoria','=','Benjamí')]" name="benjami" string="Benjamí"/>
+            </search>
         </field>
     </record>
 

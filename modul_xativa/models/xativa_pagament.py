@@ -9,6 +9,7 @@ class XativaPagament(models.Model):
     concepte = fields.Char('Concepte', required=True)
     justificant = fields.Binary('Justificant')
     pagat = fields.Boolean('Pagat')
+    formaPagament = fields.Selection(string='Forma Pagament',selection=[('transferencia', 'Transferència'),('enMa', 'En mà'),('compensacioFitxa','Compensació Fitxa')])
     persona_id = fields.Many2one('xativa.persona', string='Persona', required=True)
     temporada_id = fields.Many2one('xativa.temporada', string='Temporada')
        

@@ -62,6 +62,7 @@ class XativaPersona(models.Model):
     directiva_id = fields.Many2one('xativa.directiva', string='Càrrec directiu')
     pagaments_ids = fields.One2many('xativa.pagament', 'persona_id', string='Pagaments')
     cobraments_ids = fields.One2many('xativa.cobrament', 'persona_id', string='Cobraments')
+    esponsors_ids = fields.One2many('xativa.esponsor', 'persona_id', string='Esponsors Aportats')
 
     nomCamiseta = fields.Char('Nom', required=False)
     tallaPantaloneta = fields.Char('Pantaloneta', required=False)
@@ -69,8 +70,9 @@ class XativaPersona(models.Model):
     esOficial = fields.Boolean("Es Oficial")
     actiu = fields.Boolean("Actiu")
     IBAN = fields.Char('IBAN')
-
-   
+    documentAutoritzacioIBAN = fields.Binary('Doc. Aut. IBAN')
+    domiciliaQuotes = fields.Boolean('Domicilia Quotes')
+    observacioQuotes = fields.Text('Observacio Quotes')
 
 
     def _get_name(self):

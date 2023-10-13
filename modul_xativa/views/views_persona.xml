@@ -6,7 +6,8 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="Persona" parent="xativa_menu_esportiva" id="xativa_menu_2_persona" action="action_xativa_persona" />
+    <menuitem name="Persona" parent="xativa_menu_esportiva" id="xativa_menu_2_persona_esportiva" action="action_xativa_persona"  sequence="0"/>
+    <menuitem name="Persona" parent="xativa_menu_economica" id="xativa_menu_2_persona_economica" action="action_xativa_persona"  sequence="0"/>
     
     <record model="ir.ui.view" id="view_xativa_persona_tree">
         <field name="name">view_xativa_persona_tree</field>
@@ -16,6 +17,7 @@
             <tree string="persona">
                 <field name="nom" />
                 <field name="cognoms" />
+                <field name="identificacio" />
                 <field name="dataNaixement" />
                 <field name="categoria" />
                 <field name="validesaIdentificacio" />
@@ -23,7 +25,7 @@
                 <field name="actiu" />
                 <field name="esJugador" />
                 <field name="esOficial" />
-
+                <field name="domiciliaQuotes" />
             </tree>
         </field>
     </record>
@@ -36,25 +38,25 @@
             <form string="Persona">
                 <sheet>
                     <group col="12" string="Dades">
-                        <group colspan="4">
+                        <group colspan="3">
                             <field name="foto" widget="image" />
                         </group>
-                        <group colspan="4">
+                        <group colspan="6">
                             <field name="nom" />
                             <field name="cognoms" />
                             <field name="tipusIdentificacio" />
                             <field name="identificacio" />
                             <field name="correuElectronic" />
-                            <field name="telefon" />
+                            <field name="direccioResidencia" />
                             <field name="sexe" />
                             <field name="esJugador" />
                             <field name="esOficial" />
                         </group>
-                        <group colspan="4">
+                        <group colspan="3">
                             <field name="dataNaixement" />
                             <field name="categoria" />
                             <field name="paisNaixement" />
-                            <field name="direccioResidencia" />
+                            <field name="telefon" />
                             <field name="codiPostal" />
                             <field name="localitat" />
                             <field name="provincia" />
@@ -62,10 +64,18 @@
                             <field name="actiu" />
                         </group>
                         <group colspan="4">
+                            <field name="documentAutoritzacioIBAN" />
                         </group>
-                        <group colspan="8">
+                        <group colspan="5">
                             <field name="IBAN" />
+                        </group> 
+                        <group colspan="2">
+                            <field name="domiciliaQuotes" />
+                        </group>  
+                        <group colspan="12">
+                            <field name="observacioQuotes" />
                         </group>
+                        
                     </group>
                     <group col="12" string="Identificació">
                         <group colspan="4">
@@ -150,6 +160,9 @@
                         <page string="Cobraments">
                             <field name="cobraments_ids" />
                         </page>
+                        <page string="Esponsors aportats">
+                            <field name="esponsors_ids" />
+                        </page>
                     </notebook>
                 </sheet>
             </form>
@@ -175,8 +188,11 @@
                 <field name="provincia" />
                 <field name="paisResidencia" />
                 <filter domain="[('actiu','=','True')]" name="actiu" string="Actiu" />
+                <filter domain="[('actiu','=',False)]" name="noactiu" string="No Actiu" />
                 <filter domain="[('esJugador','=','True')]" name="jugadors" string="Jugadors" />
-                <filter domain="[('esOficial','=','True')]" name="entrenadors" string="entrenadors" />
+                <filter domain="[('esJugador','=',False)]" name="nojugadors" string="No es Jugador" />
+                <filter domain="[('esOficial','=','True')]" name="oficials" string="Oficials" />
+                <filter domain="[('esOficial','=',False)]" name="nooficials" string="No es Oficial" />
             </search>
         </field>
     </record>

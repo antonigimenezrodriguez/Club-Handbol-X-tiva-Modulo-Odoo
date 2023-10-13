@@ -2,8 +2,10 @@ from odoo import models, fields
 
 class XativaEsponsor(models.Model): 
     _name = 'xativa.esponsor'
+    _order = 'numero asc'
     name = fields.Char(compute='_get_name',string='Nom Esponsor',readonly='true',store=False)
     nomEsponsor = fields.Text('Nom', required=True)
+    logo = fields.Binary('Logo')
     importSenseIVA = fields.Float('Import sense IVA', required=False)
     importAmbIVA = fields.Float('Import amb IVA', required=False)
     telefonsContacte = fields.Text('Telèfons de contacte', required=False)
@@ -17,14 +19,12 @@ class XativaEsponsor(models.Model):
     numero = fields.Integer('Nº')
     c = fields.Integer('C')
 
+
     equips_ids = fields.Many2many('xativa.equip', 'equip_esponsor_rel', 'esponsor_id', 'equip_id', string='Equips esponsoritzats')
     temporada_id = fields.Many2one('xativa.temporada', string='Temporada')
     empresa_id = fields.Many2one('xativa.empresa', string='Empresa')
     persona_id = fields.Many2one('xativa.persona', string='Persona desgrava')
     factura_id = fields.Many2one('xativa.facturaemesa', required=False)
-
-
-    
 
     def _get_name(self):
         for record in self:

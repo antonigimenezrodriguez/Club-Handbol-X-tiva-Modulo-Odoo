@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_xativa_desgrava">
+        <field name="name">Desgravaments</field>
+        <field name="res_model">xativa.desgrava</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Desgravaments" parent="xativa_menu_economica" id="xativa_menu_2_desgrava" action="action_xativa_desgrava" />
+
+    <record model="ir.ui.view" id="view_xativa_desgravatree">
+        <field name="name">view_xativa_desgrava_tree</field>
+        <field name="model">xativa.desgrava</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="desgrava">
+                <field name="importPublicitat" />
+                <field name="importDesgravat" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

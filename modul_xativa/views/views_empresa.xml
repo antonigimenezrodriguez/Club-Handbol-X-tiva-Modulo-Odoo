@@ -25,4 +25,19 @@
         </field>
     </record>
 
+    <record id="view_xativa_empreses_search" model="ir.ui.view">
+        <field name="name">view_xativa_empreses_search</field>
+        <field name="model">xativa.empresa</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="rao_social" />
+                <field name="cif" />
+                <field name="direccio" />
+                <field name="poblacio" />
+                <field name="provincia" />
+                <field name="codi_postal" />
+            </search>
+        </field>
+    </record>
+
 </odoo>
