@@ -7,8 +7,6 @@
         <field name="context">{"search_default_temporada2324":1}</field>    
     </record>
 
-	<menuitem name="Equip" parent="xativa_menu_esportiva" id="xativa_menu_2_equip" action="action_xativa_equip" />
-
     <record model="ir.ui.view" id="view_xativa_equip_tree">
         <field name="name">view_xativa_equip_tree</field>
         <field name="model">xativa.equip</field>
@@ -34,7 +32,6 @@
                     <filter domain="[('temporada_id.temporada','=','2022-2023')]" name="temporada2223" string="Temporada 2022-2023"/>
                 </search>
         </field>
-
     </record>
 
 </odoo>

@@ -6,9 +6,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="Persona" parent="xativa_menu_esportiva" id="xativa_menu_2_persona_esportiva" action="action_xativa_persona"  sequence="0"/>
-    <menuitem name="Persona" parent="xativa_menu_economica" id="xativa_menu_2_persona_economica" action="action_xativa_persona"  sequence="0"/>
-    
     <record model="ir.ui.view" id="view_xativa_persona_tree">
         <field name="name">view_xativa_persona_tree</field>
         <field name="model">xativa.persona</field>
@@ -41,7 +38,7 @@
                         <group colspan="3">
                             <field name="foto" widget="image" />
                         </group>
-                        <group colspan="6">
+                        <group colspan="5">
                             <field name="nom" />
                             <field name="cognoms" />
                             <field name="tipusIdentificacio" />
@@ -52,7 +49,7 @@
                             <field name="esJugador" />
                             <field name="esOficial" />
                         </group>
-                        <group colspan="3">
+                        <group colspan="4">
                             <field name="dataNaixement" />
                             <field name="categoria" />
                             <field name="paisNaixement" />
@@ -71,6 +68,15 @@
                         </group> 
                         <group colspan="2">
                             <field name="domiciliaQuotes" />
+                        </group>  
+                        <group colspan="4">
+                            <field name="dataDocumentInscripcio" />
+                        </group>  
+                        <group colspan="2">
+                            <field name="autoritzaImages" />
+                        </group>  
+                        <group colspan="2">
+                            <field name="autoritzaDesplacaments" />
                         </group>  
                         <group colspan="12">
                             <field name="observacioQuotes" />
@@ -105,6 +111,9 @@
                         <group colspan="3">
                             <field name="tallaJaquetaXandall" />
                             <field name="tallaPantaloXandall" />
+                        </group>
+                        <group colspan="5">
+                            <field name="motxilla" />
                         </group>
                     </group>
 

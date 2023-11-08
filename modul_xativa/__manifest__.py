@@ -9,6 +9,8 @@
     'category': 'Uncategorized',
     'version': '11.0.1.0.0',
     'data': ['security/ir.model.access.csv',
+             'views/views_actesJunta.xml',
+            #  'views/views_camisa.xml',
              'views/views_cobroPago.xml',
              'views/views_desgrava.xml',
              'views/views_directiva.xml',

@@ -2,14 +2,15 @@ from odoo import models, fields
 
 class XativaPagament(models.Model): 
     _name = 'xativa.pagament'
+    _order = 'dataPagament asc'
     name = fields.Char(compute='_get_name',string='Pagament',readonly='true',store=False)
     categoria = fields.Char(compute='_get_categoria',string='Categoria',readonly='true',store=False)
     dataPagament = fields.Date('Data de pagament', required=False)
     importe = fields.Float('Import', required=True) # En castellà perque import es paraula reservada
-    concepte = fields.Char('Concepte', required=True)
+    concepte = fields.Text('Concepte', required=True)
     justificant = fields.Binary('Justificant')
     pagat = fields.Boolean('Pagat')
-    formaPagament = fields.Selection(string='Forma Pagament',selection=[('transferencia', 'Transferència'),('enMa', 'En mà'),('compensacioFitxa','Compensació Fitxa')])
+    formaPagament = fields.Selection(string='Forma Pagament',selection=[('transferencia', 'Transferència'),('enMa', 'En mà'),('compensacio','Compensació'),('pagoTarjeta','Pago Tarjeta')])
     persona_id = fields.Many2one('xativa.persona', string='Persona', required=True)
     temporada_id = fields.Many2one('xativa.temporada', string='Temporada')
        

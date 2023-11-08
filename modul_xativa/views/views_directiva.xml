@@ -7,8 +7,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="Directiva" parent="xativa_menu_esportiva" id="xativa_menu_2_directiva" action="action_xativa_directiva" />
-
     <record model="ir.ui.view" id="view_xativa_directiva_tree">
         <field name="name">view_xativa_directiva_tree</field>
         <field name="model">xativa.directiva</field>

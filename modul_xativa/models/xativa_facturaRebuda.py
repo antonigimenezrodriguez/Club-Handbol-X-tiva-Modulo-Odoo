@@ -5,7 +5,7 @@ class XativaFacturaRebuda(models.Model):
     numeroFactura = fields.Char('Número Factura')
     dataFactura = fields.Date('Data Factura')
     facturaDocument = fields.Binary('Document Factura')
-    descripcio = fields.Char('Descripció')
+    descripcio = fields.Text('Descripció')
     importSenveIVA = fields.Float('Import')
     IVAPercentatge = fields.Float('IVA %')
     importIVA = fields.Float('Import IVA')

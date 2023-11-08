@@ -7,6 +7,11 @@ class XativaEquip(models.Model):
     superficie = fields.Char('Superfície', required=True)
     categoria = fields.Char('Categoria', required=True)
     foto = fields.Image('Foto', required=False)
+    tripticFederacio = fields.Binary('Tríptic Federació')
+    tripticJOCSE = fields.Binary('Tríptic JOCSE')
+    llicenciesFederacio = fields.Binary('Llicències Federació')
+    llicenciesJOCSE = fields.Binary('Llicències JOCSE')
+
     temporada_id = fields.Many2one('xativa.temporada', string='Temporada')
     entrenador_id = fields.Many2one('xativa.persona', string='Entrenador')
     ajudant_entrenador_id = fields.Many2one('xativa.persona', string='Ajudant entrenador')

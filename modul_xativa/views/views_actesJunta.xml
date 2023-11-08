@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_xativa_actesJunta">
+        <field name="name">Acta junta</field>
+        <field name="res_model">xativa.actajunta</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="view_xativa_actesJunta_tree">
+        <field name="name">view_xativa_actesJunta_tree</field>
+        <field name="model">xativa.actajunta</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="directiva">
+                <field name="numero" />
+                <field name="data" />
+                <field name="lloc" />
+                <field name="temporada_id" />
+                <field name="observacions" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

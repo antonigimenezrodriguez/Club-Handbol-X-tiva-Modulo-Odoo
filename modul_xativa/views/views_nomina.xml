@@ -22,6 +22,4 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-	<menuitem name="Nómines" parent="xativa_menu_economica" id="xativa_menu_2_nomines" action="action_xativa_nomines" />
-
 </odoo> 

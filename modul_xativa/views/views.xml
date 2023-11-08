@@ -4,6 +4,28 @@
 		
 		<menuitem name="Esportiva" id="xativa_menu_esportiva" />
 		<menuitem name="Económica" id="xativa_menu_economica" />
+		<menuitem name="Junta" id="xativa_menu_junta" />
+		<!-- <menuitem name="Pedidos" id="xativa_menu_pedidos" /> -->
+
+		<menuitem name="Pagaments" parent="xativa_menu_economica" id="xativa_menu_2_pagaments" action="action_xativa_pagaments" />
+		<menuitem name="Cobraments" parent="xativa_menu_economica" id="xativa_menu_2_cobraments" action="action_xativa_cobraments" />
+		<menuitem name="Desgravaments" parent="xativa_menu_economica" id="xativa_menu_2_desgrava" action="action_xativa_desgrava" />
+		<menuitem name="Empreses" parent="xativa_menu_economica" id="xativa_menu_2_empreses" action="action_xativa_empreses" />
+		<menuitem name="Esponsors" parent="xativa_menu_economica" id="xativa_menu_2_esponsor" action="action_xativa_esponsor" />
+		<menuitem name="Factures Rebudes" parent="xativa_menu_economica" id="xativa_menu_2_facturesRebudes" action="action_xativa_facturesRebudes" />
+		<menuitem name="Factures Emeses" parent="xativa_menu_economica" id="xativa_menu_2_facturesEmeses" action="action_xativa_facturesEmeses" />
+		<menuitem name="Nómines" parent="xativa_menu_economica" id="xativa_menu_2_nomines" action="action_xativa_nomines" />
+    	<menuitem name="Persona" parent="xativa_menu_economica" id="xativa_menu_2_persona_economica" action="action_xativa_persona"  sequence="0"/>
+
+		<menuitem name="Persona" parent="xativa_menu_esportiva" id="xativa_menu_2_persona_esportiva" action="action_xativa_persona"  sequence="0"/>
+		<menuitem name="Equip" parent="xativa_menu_esportiva" id="xativa_menu_2_equip" action="action_xativa_equip" />
+		<menuitem name="Temporada" parent="xativa_menu_esportiva" id="xativa_menu_2_temporada" action="action_xativa_temporada" />
+
+		<menuitem name="Actes Junta" parent="xativa_menu_junta" id="xativa_menu_2_actesJunta" action="action_xativa_actesJunta" />
+		<menuitem name="Directiva" parent="xativa_menu_junta" id="xativa_menu_2_directiva" action="action_xativa_directiva" />
 		
+		<!-- <menuitem name="Camises" parent="xativa_menu_pedidos" id="xativa_menu_2_camises" action="action_xativa_camises" /> -->
+    
+
 	</data>
 </odoo>

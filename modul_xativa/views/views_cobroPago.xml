@@ -13,9 +13,6 @@
         <field name="view_mode">tree,form</field>
     </record>		
 
-    <menuitem name="Pagaments" parent="xativa_menu_economica" id="xativa_menu_2_pagaments" action="action_xativa_pagaments" />
-    <menuitem name="Cobraments" parent="xativa_menu_economica" id="xativa_menu_2_cobraments" action="action_xativa_cobraments" />
-
     <record model="ir.ui.view" id="view_xativa_pagaments_tree">
         <field name="name">view_xativa_pagaments_tree</field>
         <field name="model">xativa.pagament</field>

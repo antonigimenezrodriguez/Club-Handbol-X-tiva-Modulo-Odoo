@@ -10,10 +10,11 @@ class XativaPersona(models.Model):
     identificacio = fields.Char('Identificació', required=False)
     correuElectronic = fields.Char('Correu Electrònic', required=False)
     telefon = fields.Integer('Telèfon', required=False)
-    sexe = fields.Char('Sexe', required=False)
+    sexe = fields.Selection(string='Sexe',selection=[('masculi', 'Masculí'),('femeni', 'Femení')])
+
     foto = fields.Image('Foto', required=False)
 
-    categoria = fields.Char('Categoria', required=False)
+    categoria = fields.Selection(string='Categoria',selection=[('prebenjami', 'Prebenjamí'),('benjami', 'Benjamí'),('alevi', 'Aleví'),('infantil', 'Infantil'),('cadet', 'Cadet'),('juvenil', 'Juvenil'),('senior', 'Senior')])
     dataNaixement = fields.Date('Data Naixement', required=False)
     paisNaixement = fields.Char('Pais de Naixement', required=False)
     direccioResidencia = fields.Char('Direcció', required=False)
@@ -53,7 +54,8 @@ class XativaPersona(models.Model):
     tallaSudadera = fields.Char('Sudadera', required=False)
     tallaPolo = fields.Char('Polo', required=False)
     tallaJaquetaXandall = fields.Char('Jaqueta Xandall', required=False)
-    tallaPantaloXandall = fields.Char('Pantaló Xandall', required=False) 
+    tallaPantaloXandall = fields.Char('Pantaló Xandall', required=False)
+    motxilla = fields.Char('Motxilla')
 
     equip_jugador_ids = fields.Many2many('xativa.equip', 'equip_jugador_rel', 'persona_id', 'equip_id', string='Equips com jugador')
     equip_convidats_ids = fields.Many2many('xativa.equip', 'equip_convidat_rel', 'persona_id', 'equip_id', string='Equips com convidat')
@@ -70,9 +72,13 @@ class XativaPersona(models.Model):
     esOficial = fields.Boolean("Es Oficial")
     actiu = fields.Boolean("Actiu")
     IBAN = fields.Char('IBAN')
-    documentAutoritzacioIBAN = fields.Binary('Doc. Aut. IBAN')
+    documentAutoritzacioIBAN = fields.Binary('Doc. Inscrip.')
     domiciliaQuotes = fields.Boolean('Domicilia Quotes')
     observacioQuotes = fields.Text('Observacio Quotes')
+    dataDocumentInscripcio = fields.Date('Data Doc. Insc.')
+    autoritzaImages = fields.Boolean('Aut. imatges')
+    autoritzaDesplacaments = fields.Boolean('Aut. Despl.')
+
 
 
     def _get_name(self):
