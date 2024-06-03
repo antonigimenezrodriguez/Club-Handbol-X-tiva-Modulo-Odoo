@@ -1,6 +1,7 @@
 from odoo import models, fields     
 class XativaFacturaEmesa(models.Model): 
     _name = 'xativa.facturaemesa'
+    _order = 'dataFactura asc'
     name = fields.Char(compute='_get_name',string='Factura',readonly='true',store=False)
     numeroFactura = fields.Char('Número Factura')
     dataFactura = fields.Date('Data Factura')

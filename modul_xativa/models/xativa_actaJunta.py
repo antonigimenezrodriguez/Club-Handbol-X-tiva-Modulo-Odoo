@@ -2,6 +2,7 @@ from odoo import models, fields
 
 class XativaActaJunta(models.Model): 
     _name = 'xativa.actajunta'
+    _order = 'data asc'
     name = fields.Char(compute='_get_name',string='Número',readonly='true',store=False)
     numero = fields.Integer('Núm. Acta')
     data = fields.Datetime('Data i hora')

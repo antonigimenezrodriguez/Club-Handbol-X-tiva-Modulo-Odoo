@@ -2,6 +2,7 @@ from odoo import models, fields
 
 class XativaEquip(models.Model): 
     _name = 'xativa.equip'
+    _order = 'ordre asc'
     name = fields.Char(compute='_get_name',string='Nom equip',readonly='true',store=False)
     nomComercial = fields.Char('Nom Comercial', required=True)
     superficie = fields.Char('Superfície', required=True)
@@ -11,6 +12,7 @@ class XativaEquip(models.Model):
     tripticJOCSE = fields.Binary('Tríptic JOCSE')
     llicenciesFederacio = fields.Binary('Llicències Federació')
     llicenciesJOCSE = fields.Binary('Llicències JOCSE')
+    ordre = fields.Integer('Ordre')
 
     temporada_id = fields.Many2one('xativa.temporada', string='Temporada')
     entrenador_id = fields.Many2one('xativa.persona', string='Entrenador')
