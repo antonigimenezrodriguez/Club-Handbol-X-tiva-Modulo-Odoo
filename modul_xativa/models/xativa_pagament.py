@@ -5,12 +5,15 @@ class XativaPagament(models.Model):
     _order = 'dataPagament asc'
     name = fields.Char(compute='_get_name',string='Pagament',readonly='true',store=False)
     categoria = fields.Char(compute='_get_categoria',string='Categoria',readonly='true',store=False)
-    dataPagament = fields.Date('Data de pagament', required=False)
+    dataPagament = fields.Date('Data de pagament estipulat', required=False)
+    dataPagamentReal = fields.Date('Data de pagament real', required=False)
     importe = fields.Float('Import', required=True) # En castellà perque import es paraula reservada
     concepte = fields.Text('Concepte', required=True)
     justificant = fields.Binary('Justificant')
     pagat = fields.Boolean('Pagat')
     formaPagament = fields.Selection(string='Forma Pagament',selection=[('transferencia', 'Transferència'),('enMa', 'En mà'),('compensacio','Compensació'),('pagoTarjeta','Pago Tarjeta')])
+    tipusPagament = fields.Selection(string='Tipus Pagament',selection=[('endarreriments', 'Endarreriments'),('arbitratge', 'Arbitratge'),('salari','Salari'),('collegi','Col·legi'),('devolució','Devolució'),('compensacio','Compensació'),('altres','Altres')])
+    observacions = fields.Text(string='Observacions')
     persona_id = fields.Many2one('xativa.persona', string='Persona', required=True)
     temporada_id = fields.Many2one('xativa.temporada', string='Temporada')
        

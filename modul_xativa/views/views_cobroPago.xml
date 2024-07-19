@@ -21,6 +21,7 @@
             <tree string="pagament">
                 <field name="persona_id" />
                 <field name="dataPagament" />
+                <field name="dataPagamentReal" />
                 <field name="formaPagament" />
                 <field name="concepte" />
                 <field name="pagat" />
@@ -42,6 +43,7 @@
                 <field name="cobrat" />
                 <field name="importe" />
                 <field name="dataCobrament" />
+                <field name="dataCobramentReal" />
                 <field name="formaCobrament" />
                 <field name="categoria" />
                 <field name="temporada_id" />
