@@ -4,7 +4,6 @@
         <field name="name">Esponsor</field>
         <field name="res_model">xativa.esponsor</field>
         <field name="view_mode">tree,form</field>
-        <field name="context">{"search_default_temporada2324":1}</field>    
     </record>
 
     <record model="ir.ui.view" id="view_xativa_esponsor_tree">
@@ -37,7 +36,8 @@
                 <field name="importSenseIVA" />
                 <field name="importAmbIVA" />
                 <field name="importDesgravat" />
-                <filter domain="[('temporada_id.temporada','=','2023-2024')]" name="temporada2324" string="Temporada 2023-2024"/>
+                <filter domain="[('temporada_id.temporada','=','2024-2025')]" name="temporada2425" string="Temporada 2024-2025"/>
+                <filter domain="[('temporada_id.temporada','=','2023-2024')]" name="temporada2324new" string="Temporada 2023-2024"/>
                 <filter domain="[('cobrat','=','True')]" name="cobrat" string="Cobrat" />
                 <filter domain="[('cobrat','=',False)]" name="nocobrat" string="No Cobrat" />
             </search>
