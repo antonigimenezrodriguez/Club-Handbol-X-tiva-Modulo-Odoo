@@ -27,4 +27,4 @@ class XativaEquip(models.Model):
 
     def _get_name(self):
         for record in self:
-            record.name = str(record.nomComercial + ' ' + record.categoria + ' ' + record.sexe + ' ' + record.competicio)
+            record.name = str(record.nomComercial)
