@@ -15,6 +15,8 @@
                 <field name="nomComercial" />
                 <field name="superficie" />
                 <field name="categoria" />
+                <field name="sexe" />
+                <field name="competicio" />
                 <field name="temporada_id" />
             </tree>
         </field>
