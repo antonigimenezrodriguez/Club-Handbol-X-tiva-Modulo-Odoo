@@ -7,7 +7,7 @@ class XativaEquip(models.Model):
     nomComercial = fields.Char('Nom Comercial', required=True)
     superficie = fields.Char('Superfície', required=True)
     categoria = fields.Selection(string='Categoria',selection=[('prebenjami', 'Prebenjamí'),('benjami', 'Benjamí'),('alevi', 'Aleví'),('infantil', 'Infantil'),('cadet', 'Cadet'),('juvenil', 'Juvenil'),('senior', 'Senior')])
-    sexe = fields.Selection(string='Sexe',selection=[('masculi', 'Masculí'),('femeni', 'Femení')])
+    sexe = fields.Selection(string='Sexe',selection=[('masculi', 'Masculí'),('femeni', 'Femení'),('mixt','Mixt')])
     competicio = fields.Selection(string='Competició',selection=[('1Nac','1ª Nacional'),('2Nac', '2ª Nacional'),('1Aut', '1ª Autonòmica'),('2Aut', '2ª Autonòmica'),('Niv1', 'Nivell 1'),('Niv2', 'Nivell 2'),('Prov','Provincial')])
     foto = fields.Image('Foto', required=False)
     tripticFederacio = fields.Binary('Tríptic Federació')
@@ -27,4 +27,4 @@ class XativaEquip(models.Model):
 
     def _get_name(self):
         for record in self:
-            record.name = str(record.nomComercial + ' ' + record.categoria)
+            record.name = str(record.nomComercial + ' ' + record.categoria + ' ' + record.sexe + ' ' + record.competicio)
