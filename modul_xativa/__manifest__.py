@@ -18,6 +18,7 @@
              'views/views_equip.xml',
              'views/views_esponsor.xml',
              'views/views_factures.xml',
+             'views/views_gasolina.xml',
              'views/views_nomina.xml',
              'views/views_persona.xml',
              'views/views_temporada.xml',

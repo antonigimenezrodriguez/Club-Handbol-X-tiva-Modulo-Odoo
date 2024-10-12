@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="action_xativa_gasolina">
+        <field name="name">Gasolina</field>
+        <field name="res_model">xativa.gasolina</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="view_xativa_gasolinatree">
+        <field name="name">view_xativa_gasolina_tree</field>
+        <field name="model">xativa.gasolina</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="gasolina">
+                <field name="kilometres" />
+                <field name="importe" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>
