@@ -11,4 +11,5 @@ from . import xativa_nomina
 from . import xativa_empresa
 from . import xativa_desgrava
 from . import xativa_actaJunta
+from . import xativa_gasolina
 # from . import xativa_camisa
