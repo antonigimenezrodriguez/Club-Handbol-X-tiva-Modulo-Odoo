@@ -10,12 +10,11 @@
     <record model="ir.ui.view" id="view_xativa_desgravatree">
         <field name="name">view_xativa_desgrava_tree</field>
         <field name="model">xativa.desgrava</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="desgrava">
+            <list string="desgrava">
                 <field name="importPublicitat" />
                 <field name="importDesgravat" />
-            </tree>
+            </list>
         </field>
     </record>
 

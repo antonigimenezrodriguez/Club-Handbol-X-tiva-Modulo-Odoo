@@ -7,7 +7,7 @@
     'license': "AGPL-3",
     'website': "http://www.clubhandbolxativa.com",
     'category': 'Uncategorized',
-    'version': '17.0.1.0.0',
+    'version': '18.1',
     'data': ['security/ir.model.access.csv',
              'views/views_actesJunta.xml',
             #  'views/views_camisa.xml',

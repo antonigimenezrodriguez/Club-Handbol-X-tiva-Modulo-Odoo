@@ -15,32 +15,30 @@
     <record model="ir.ui.view" id="view_xativa_facturesEmeses_tree">
         <field name="name">view_xativa_facturesEmeses_tree</field>
         <field name="model">xativa.facturaemesa</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="facturaEmesa">
+            <list string="facturaEmesa">
                 <field name="numeroFactura" />
                 <field name="descripcio" />
                 <field name="dataFactura" />
                 <field name="empresa_id" />
                 <field name="total" />
                 <field name="cobrada" />
-            </tree>
+            </list>
         </field>
     </record>
 
     <record model="ir.ui.view" id="view_xativa_facturesRebudes_tree">
         <field name="name">view_xativa_facturesRebudes_tree</field>
         <field name="model">xativa.facturarebuda</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="facturaRebuda">
+            <list string="facturaRebuda">
                 <field name="numeroFactura" />
                 <field name="descripcio" />
                 <field name="dataFactura" />
                 <field name="empresa_id" />
                 <field name="total" />
                 <field name="pagada" />
-            </tree>
+            </list>
         </field>
     </record>
 

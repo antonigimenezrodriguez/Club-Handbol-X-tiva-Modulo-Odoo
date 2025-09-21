@@ -10,9 +10,8 @@
     <record model="ir.ui.view" id="view_xativa_camisa_tree">
         <field name="name">view_xativa_camisa_tree</field>
         <field name="model">xativa.camisa</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="camisa">
+            <list string="camisa">
                 <field name="persona_id" />
                 <field name="dorsal" />
                 <field name="talla" />
@@ -27,7 +26,7 @@
                 <field name="preu" />
                 <field name="observacions" />
                 <field name="temporada_id" />
-            </tree>
+            </list>
         </field>
     </record>
 

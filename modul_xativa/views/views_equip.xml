@@ -9,16 +9,15 @@
     <record model="ir.ui.view" id="view_xativa_equip_tree">
         <field name="name">view_xativa_equip_tree</field>
         <field name="model">xativa.equip</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="equip">
+            <list string="equip">
                 <field name="nomComercial" />
                 <field name="superficie" />
                 <field name="categoria" />
                 <field name="sexe" />
                 <field name="competicio" />
                 <field name="temporada_id" />
-            </tree>
+            </list>
         </field>
     </record>
 

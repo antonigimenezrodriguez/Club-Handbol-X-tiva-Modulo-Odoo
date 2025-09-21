@@ -16,9 +16,8 @@
     <record model="ir.ui.view" id="view_xativa_pagaments_tree">
         <field name="name">view_xativa_pagaments_tree</field>
         <field name="model">xativa.pagament</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="pagament">
+            <list string="pagament">
                 <field name="persona_id" />
                 <field name="dataPagament" />
                 <field name="dataPagamentReal" />
@@ -28,16 +27,15 @@
                 <field name="importe" />
                 <field name="categoria" />
                 <field name="temporada_id" />
-            </tree>
+            </list>
         </field>
     </record>
 
     <record model="ir.ui.view" id="view_xativa_cobraments_tree">
         <field name="name">view_xativa_cobraments_tree</field>
         <field name="model">xativa.cobrament</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="cobrament">
+            <list string="cobrament">
                 <field name="persona_id" />
                 <field name="concepte" />
                 <field name="cobrat" />
@@ -47,7 +45,7 @@
                 <field name="formaCobrament" />
                 <field name="categoria" />
                 <field name="temporada_id" />
-            </tree>
+            </list>
         </field>
     </record>
 

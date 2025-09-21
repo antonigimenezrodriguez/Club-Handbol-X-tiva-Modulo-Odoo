@@ -4,15 +4,14 @@
     <record model="ir.ui.view" id="view_xativa_nomines_tree">
         <field name="name">view_xativa_nomines_tree</field>
         <field name="model">xativa.nomina</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="nomina">
+            <list string="nomina">
                 <field name="persona_id" />
                 <field name="any" />
                 <field name="mes" />
                 <field name="totalBrut" />
                 <field name="totalNet" />
-            </tree>
+            </list>
         </field>
     </record>
 

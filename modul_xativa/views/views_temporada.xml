@@ -10,11 +10,10 @@
     <record model="ir.ui.view" id="view_xativa_temporada_tree">
         <field name="name">view_xativa_temporada_tree</field>
         <field name="model">xativa.temporada</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="temporada">
+            <list string="temporada">
                 <field name="temporada" />
-            </tree>
+            </list>
         </field>
     </record>		
 

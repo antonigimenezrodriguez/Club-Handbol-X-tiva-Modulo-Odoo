@@ -9,9 +9,8 @@
     <record model="ir.ui.view" id="view_xativa_esponsor_tree">
         <field name="name">view_xativa_esponsor_tree</field>
         <field name="model">xativa.esponsor</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="esponsor">
+            <list string="esponsor">
                 <field name="numero" />
                 <field name="c" />
                 <field name="nomEsponsor" />
@@ -23,7 +22,7 @@
                 <field name="cobrat" />
                 <field name="persona_id" />
                 <field name="importDesgravat" />
-            </tree>
+            </list>
         </field>
     </record>
 

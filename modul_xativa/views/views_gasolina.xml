@@ -10,12 +10,11 @@
     <record model="ir.ui.view" id="view_xativa_gasolinatree">
         <field name="name">view_xativa_gasolina_tree</field>
         <field name="model">xativa.gasolina</field>
-        <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree string="gasolina">
+            <list string="gasolina">
                 <field name="kilometres" />
                 <field name="importe" />
-            </tree>
+            </list>
         </field>
     </record>
 
