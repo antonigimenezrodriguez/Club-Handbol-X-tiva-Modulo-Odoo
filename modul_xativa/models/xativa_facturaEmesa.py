@@ -3,6 +3,7 @@ class XativaFacturaEmesa(models.Model):
     _name = 'xativa.facturaemesa'
     _order = 'dataFactura asc'
     name = fields.Char(compute='_get_name',string='Factura',readonly='true',store=False)
+    _order = 'dataFactura desc, numeroFactura desc'
     numeroFactura = fields.Char('Número Factura')
     dataFactura = fields.Date('Data Factura')
     facturaDocument = fields.Binary('Document Factura')

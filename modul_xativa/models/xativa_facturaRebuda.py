@@ -1,7 +1,8 @@
 from odoo import models, fields     
 class XativaFacturaRebuda(models.Model): 
     _name = 'xativa.facturarebuda'
-    _order = 'dataFactura asc'
+    _order = 'dataFactura desc, numeroFactura desc'
+    
     name = fields.Char(compute='_get_name',string='Factura',readonly='true',store=False)
     numeroFactura = fields.Char('Número Factura')
     dataFactura = fields.Date('Data Factura')
