@@ -44,5 +44,9 @@ class XativaFacturaEmesa(models.Model):
 
     def _get_name(self):
         for record in self:
-            empresa = record.empresa_id.rao_social if record.empresa_id else ''
-            record.name = f"{record.numeroFactura or ''} - {empresa}"
+            parts = []
+            if record.numeroFactura:
+                parts.append(str(record.numeroFactura))
+            if record.empresa_id and record.empresa_id.rao_social:
+                parts.append(record.empresa_id.rao_social)
+            record.name = " - ".join(parts) if parts else "Factura sense dades"
